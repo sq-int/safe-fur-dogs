@@ -38,6 +38,10 @@ export const MainSearch = styled.form`
             border-bottom-right-radius: 0.5rem;
         }
 
+        &:hover {
+            cursor: pointer;
+        }
+
         img {
             height: 3rem;
             width: 100%;
