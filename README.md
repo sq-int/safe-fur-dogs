@@ -17,6 +17,7 @@ React.js, Redux, styled-components, react-router-dom, react-hook-form
 |---|---|---|
 |Dog.svg|Flaticon|[MIT](http://www.flaticon.com)|
 |Bone.svg|Flaticon|[MIT](http://www.flaticon.com)|
+|Search.svg|IconFinder|[MIT](http://iconfinder.com)|
 
 # Testing
 
