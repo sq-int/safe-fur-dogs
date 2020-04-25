@@ -2,8 +2,11 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 import { useDispatch } from 'react-redux';
 
+/* actions */
+import { searchActionCreators } from '../actions';
+
 /* styles */
-import { Container, Content } from '../styles/global/structure';
+import { Content } from '../styles/global/structure';
 import { MainHeading } from '../styles/global/type';
 import { MainSearch } from '../styles/global/forms';
 
@@ -18,11 +21,13 @@ function SearchView() {
   /* configure react-hook-form */
   const { register, errors, handleSubmit } = useForm();
 
+  /* action creators */
+  const searchItem = searchActionCreators.searchItem;
+
   /* handle form submission */
   const onSubmit = (data) => {
-    console.log(data);
-    dispatch({ type: 'START_SEARCH' });
-    dispatch({ type: 'SEARCH_SUCCESS', payload: data });
+    // console.log(data);
+    dispatch(searchItem(data.query));
   }
 
   return (
