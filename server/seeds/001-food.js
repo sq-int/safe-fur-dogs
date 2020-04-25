@@ -7,11 +7,18 @@ exports.seed = function(knex) {
       return knex('food').insert([
         {
           food: 'Chocolate',
-          safe: false
+          safe: false,
+          img: 'assets/Chocolate.svg'
         },
         {
           food: 'Chicken',
-          safe: true
+          safe: true,
+          img: 'assets/Chicken.svg'
+        },
+        {
+          food: 'Eggs',
+          safe: true,
+          img: 'assets/Eggs.svg'
         }
       ]);
     });
