@@ -1,6 +1,7 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import { useDispatch } from 'react-redux';
+import { useHistory } from 'react-router-dom';
 
 /* actions */
 import { searchActionCreators } from '../actions';
@@ -18,6 +19,9 @@ function SearchView() {
   /* redux config */
   const dispatch = useDispatch();
 
+  /* history and params */
+  const history = useHistory();
+
   /* configure react-hook-form */
   const { register, errors, handleSubmit } = useForm();
 
@@ -26,8 +30,7 @@ function SearchView() {
 
   /* handle form submission */
   const onSubmit = (data) => {
-    // console.log(data);
-    dispatch(searchItem(data.query));
+    dispatch(searchItem(data.query, () => history.push(`/${data.query}`)));
   }
 
   return (

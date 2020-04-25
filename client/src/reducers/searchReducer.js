@@ -4,12 +4,14 @@ const {
     START_SEARCH,
     SEARCH,
     SEARCH_SUCCESS,
+    FOOD_FOUND
 } = searchActionTypes;
 
 const initialState = {
     loading: false,
     error: '',
-    query: ''
+    query: '',
+    food: []
 }
 
 export const searchReducer = (state = initialState, action) => {
@@ -26,6 +28,11 @@ export const searchReducer = (state = initialState, action) => {
                 ...state,
                 loading: false,
                 query: action.payload
+            }
+        case FOOD_FOUND:
+            return {
+                ...state,
+                food: action.payload
             }
         default:
             return state;
