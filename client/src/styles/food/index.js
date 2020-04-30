@@ -43,7 +43,6 @@ export const FoodContainer = styled.div`
             }
 
             .safe {
-                // color: #455c54;
                 color: #247d46;
             }
 
