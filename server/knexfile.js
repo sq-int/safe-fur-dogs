@@ -1,32 +1,24 @@
+require('dotenv').config();
 
 module.exports = {
 
   development: {
-    client: 'sqlite3',
-    connection: {
-      filename: './db/sfd.sqlite3'
-    },
-    useNullAsDefault: true,
-    pool: {
-      afterCreate: (conn, done) => {
-        conn.run('PRAGMA foreign_keys = ON', done);
-      }
-    }
+    client: 'pg',
+    connection: `postgres://squint:${process.env.DBPASS}@localhost/sfdb`,
   },
 
   production: {
     client: 'pg',
-    connection: {
-      database: 'my_db',
-      user:     'username',
-      password: 'password'
-    },
+    connection: process.env.DATABASE_URL,
     pool: {
       min: 2,
       max: 10
     },
     migrations: {
-      tableName: 'knex_migrations'
+      directory: './migrations'
+    },
+    seeds: {
+      directory: './seeds'
     }
   }
 
