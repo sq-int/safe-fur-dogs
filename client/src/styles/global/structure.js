@@ -9,8 +9,8 @@ export const Container = styled(animated.div)`
 `;
 
 export const Content = styled(animated.div)`
+    margin-top: 15%;
     width: 80%;
-    height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
