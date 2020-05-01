@@ -4,7 +4,8 @@ const {
     START_SEARCH,
     SEARCH,
     SEARCH_SUCCESS,
-    FOOD_FOUND
+    FOOD_FOUND,
+    RESET_SEARCH
 } = searchActionTypes;
 
 const initialState = {
@@ -15,7 +16,7 @@ const initialState = {
 }
 
 export const searchReducer = (state = initialState, action) => {
-    switch(action.type) {
+    switch (action.type) {
         case START_SEARCH:
             console.log('Made it to start search');
             return {
@@ -34,6 +35,8 @@ export const searchReducer = (state = initialState, action) => {
                 ...state,
                 food: action.payload
             }
+        case RESET_SEARCH:
+            return initialState;
         default:
             return state;
     }

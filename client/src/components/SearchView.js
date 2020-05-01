@@ -34,19 +34,19 @@ function SearchView() {
   }
 
   return (
-      <Content>
-        <MainHeading>Safe Fur Dogs</MainHeading>
+    <Content>
+      <MainHeading>Safe Fur Dogs</MainHeading>
 
-        <MainSearch onSubmit={handleSubmit(onSubmit)}>
-          <input
-            type="text"
-            name="query"
-            ref={register()}
-            autoComplete="off"
-          />
-          <button type="submit"><img src={Search} alt="Search" /></button>
-        </MainSearch>
-      </Content>
+      <MainSearch onSubmit={handleSubmit(onSubmit)}>
+        <input
+          type="text"
+          name="query"
+          ref={register()}
+          autoComplete="off"
+        />
+        <button type="submit"><img src={Search} alt="Search" /></button>
+      </MainSearch>
+    </Content>
   );
 }
 

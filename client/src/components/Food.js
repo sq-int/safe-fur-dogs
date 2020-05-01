@@ -16,27 +16,31 @@ export default function Food() {
     const props = useSpring({ opacity: 1, from: { opacity: 0 } });
 
     /* bring in state */
-    const state = useSelector(state => state.searchReducer);
+    const state = useSelector(state => state);
 
     /* params, history, location */
     const params = useParams();
     const location = useLocation();
 
-    /* application state for matched food, plus capitalized title of food */
-    const [food, setFood] = useState(state.food[0]);
-    const [title, setTitle] = useState(capitalizeString(state.food[0].food));
+    /* application state for formatted food title */
+    const [title, setTitle] = useState('');
+
+    useEffect(() => {
+        setTitle(capitalizeString(state.food[0].food));
+    }, [state]);
 
     return (
         <Content style={props}>
             <FoodContainer>
                 <div className="row">
                     <div className="img-container">
-                        <img src={food.img} alt='Food' />
+                        <img src={state.food[0].img} alt='Food' />
                     </div>
                     <div className="food-info">
+                        {/* <h2>{state.food[0].food}</h2> */}
                         <h2>{title}</h2>
-                        {food.safe === true && <h4 className="safe">Safe</h4>}
-                        {food.safe === false && <h4 className="unsafe">Not Safe</h4>}
+                        {state.food[0].safe === true && <h4 className="safe">Safe</h4>}
+                        {state.food[0].safe === false && <h4 className="unsafe">Not Safe</h4>}
                     </div>
 
                 </div>
