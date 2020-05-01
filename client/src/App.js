@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import { useSpring, animated } from 'react-spring';
 
 /* styles */
@@ -8,6 +8,9 @@ import { Container } from './styles/global/structure';
 /* components */
 import SearchView from './components/SearchView';
 import Food from './components/Food';
+import Header from './components/structure/Header';
+import FoodList from './components/FoodList';
+import Contact from './components/Contact';
 
 function App() {
 
@@ -16,12 +19,21 @@ function App() {
 
   return (
     <Container style={props}>
-      <Route exact path="/">
-        <SearchView />
-      </Route>
-      <Route path="/:food">
-        <Food />
-      </Route>
+      <Header />
+      <Switch>
+        <Route exact path="/">
+          <SearchView />
+        </Route>
+        <Route exact path="/food">
+          <FoodList />
+        </Route>
+        <Route path="/contact">
+          <Contact />
+        </Route>
+        <Route exact path="/:food">
+          <Food />
+        </Route>
+      </Switch>
     </Container>
   );
 }

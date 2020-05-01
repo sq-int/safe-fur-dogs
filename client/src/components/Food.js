@@ -28,8 +28,6 @@ export default function Food() {
 
     return (
         <Content style={props}>
-            <Link to="/">go home</Link>
-            {console.log(food)}
             <FoodContainer>
                 <div className="row">
                     <div className="img-container">
