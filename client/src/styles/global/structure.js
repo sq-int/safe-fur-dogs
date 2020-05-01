@@ -1,13 +1,14 @@
+import { useSpring, animated } from 'react-spring';
 import styled from 'styled-components';
 
-export const Container = styled.div`
+export const Container = styled(animated.div)`
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
 `;
 
-export const Content = styled.div`
+export const Content = styled(animated.div)`
     width: 80%;
     height: 100vh;
     display: flex;
