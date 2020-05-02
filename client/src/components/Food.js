@@ -12,6 +12,7 @@ import { capitalizeString } from '../utils/strings';
 
 /* components */
 import References from './References';
+import NotFound from './alerts/NotFound';
 
 export default function Food() {
 
@@ -28,14 +29,8 @@ export default function Food() {
     /* application state for formatted food title */
     const [title, setTitle] = useState('');
 
-    // if(state) {
-    //     useEffect(() => {
-    //         setTitle(capitalizeString(state.food[0].food))
-    //     }, []);
-    // }
-
     useEffect(() => {
-        if(state.food.length) {
+        if (state.food.length) {
             setTitle(capitalizeString(state.food[0].food));
         }
     }, [state]);
@@ -46,36 +41,37 @@ export default function Food() {
             <InnerContainer>
                 <FoodContainer>
                     {state.food !== undefined && state.food.length > 0 &&
-                    <div className="row">
-                        <div className="img-container">
-                            <img src={state.food[0].img} alt='Food' />
-                        </div>
-                        <div className="food-info">
-                            <h2>{title}</h2>
-                            {state.food[0].safe === true && <h4 className="safe">Safe</h4>}
-                            {state.food[0].safe === false && <h4 className="unsafe">Not Safe</h4>}
-                        </div>
-                    </div>}
+                        <div className="row">
+                            <div className="img-container">
+                                <img src={state.food[0].img} alt='Food' />
+                            </div>
+                            <div className="food-info">
+                                <h2>{title}</h2>
+                                {state.food[0].safe === true && <h4 className="safe">Safe</h4>}
+                                {state.food[0].safe === false && <h4 className="unsafe">Not Safe</h4>}
+                            </div>
+                        </div>}
 
                     {state.food === undefined || state.food.length === 0 &&
                         <div className="error">
                             <p>Unfortunately that food is not yet in our database.</p>
                             <p>Would you like to help add it?</p>
+                            <NotFound />
                         </div>
                     }
                 </FoodContainer>
 
                 {state.food !== undefined && state.food.length > 0 &&
-                <Summary>
-                    <p>{state.food[0].summary}</p>
-                </Summary>}
+                    <Summary>
+                        <p>{state.food[0].summary}</p>
+                    </Summary>}
             </InnerContainer>
 
             {state.food !== undefined && state.food.length > 0 &&
-            <ResourceList>
-                <h3>Helpful Resources</h3>
-                <References resources={state.food[0].resources} />
-            </ResourceList>}
+                <ResourceList>
+                    <h3>Helpful Resources</h3>
+                    <References resources={state.food[0].resources} />
+                </ResourceList>}
         </FoodResult>
     )
 }

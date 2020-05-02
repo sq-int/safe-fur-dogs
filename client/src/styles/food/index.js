@@ -187,3 +187,42 @@ export const Error = styled.div`
         color: red;
     }
 `;
+
+export const ErrorButton = styled.button`
+    background: #bfffe9;
+    color: #444444;
+    font-size: 1.4rem;
+    font-weight: 200;
+    line-height: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    border-radius: 0.5rem;
+    padding: 0.5rem 1rem;
+    transition: all 300ms;
+
+    &:hover {
+        transition: background 300ms;
+        cursor: pointer;
+        background: #b4f0db;
+    }
+    
+    &:focus {
+        outline: 1px solid #C4C4C4;
+    }
+`;
+
+export const FoodErrorContent = styled.p`
+    font-size: 1.4rem;
+    line-height: 3rem;
+    color: #444444;
+`;
+
+export const FoodErrorTitle = styled.h4`
+    font-size: 2rem;
+    font-weight: 900;
+    line-height: 3rem;
+    color: #111111;
+    padding: 2rem 0 0 2.2rem;
+`;
