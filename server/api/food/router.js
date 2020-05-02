@@ -21,7 +21,7 @@ router.get('/', (req, res) => {
 /* get a food by its name */
 router.get('/:name', (req, res) => {
 
-    const foodQuery = req.params.name;
+    const foodQuery = req.params.name.toLowerCase();
 
     Food.getFoodByName(foodQuery)
         .then(found => {
