@@ -7,7 +7,7 @@ import { useHistory } from 'react-router-dom';
 import { searchActionCreators } from '../actions';
 
 /* styles */
-import { Content } from '../styles/global/structure';
+import { SearchBox } from '../styles/global/structure';
 import { MainHeading } from '../styles/global/type';
 import { MainSearch } from '../styles/global/forms';
 
@@ -34,7 +34,7 @@ function SearchView() {
   }
 
   return (
-    <Content>
+    <SearchBox>
       <MainHeading>Safe Fur Dogs</MainHeading>
 
       <MainSearch onSubmit={handleSubmit(onSubmit)}>
@@ -46,7 +46,7 @@ function SearchView() {
         />
         <button type="submit"><img src={Search} alt="Search" /></button>
       </MainSearch>
-    </Content>
+    </SearchBox>
   );
 }
 
