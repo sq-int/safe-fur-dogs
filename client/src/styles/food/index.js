@@ -68,7 +68,7 @@ export const Summary = styled.div`
     width: 100%;
     margin-top: 10rem;
     height: 5rem;
-    // padding: 0 10%;
+    padding: 0 10%;
     display: flex;
     align-items: center;
     justify-content: center;

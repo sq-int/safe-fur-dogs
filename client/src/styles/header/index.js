@@ -4,8 +4,22 @@ export const HeaderContainer = styled.div`
     width: 100%;
     height: 7rem;
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
     align-items: center;
+
+    .coffee {
+        width: 20%;
+        height: 7rem;
+        display: flex;
+        align-items: center;
+        margin-left: 5%;
+
+        img {
+            width: 100%;
+            height: 3rem;
+            object-fit: contain;
+        }
+    }
 
     nav {
         width: 50%;
