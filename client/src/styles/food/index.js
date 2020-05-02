@@ -174,3 +174,16 @@ export const Resource = styled.div`
         }
     }
 `;
+
+export const Error = styled.div`
+    width: 100%;
+    border: 1px solid red;
+
+    p {
+        font-size: 2rem;
+    }
+
+    p.not-found {
+        color: red;
+    }
+`;

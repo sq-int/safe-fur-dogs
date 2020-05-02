@@ -17,7 +17,8 @@ const store = createStore(searchReducer, persistedState, applyMiddleware(thunk, 
 
 store.subscribe(_.throttle(() => {
   saveState({
-    food: store.getState().food
+    food: store.getState().food,
+    error: store.getState().error
   })
 }, 1000));
 

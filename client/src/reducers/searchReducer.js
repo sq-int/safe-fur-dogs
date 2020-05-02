@@ -5,7 +5,8 @@ const {
     SEARCH,
     SEARCH_SUCCESS,
     FOOD_FOUND,
-    RESET_SEARCH
+    RESET_SEARCH,
+    SEARCH_FAIL
 } = searchActionTypes;
 
 const initialState = {
@@ -18,7 +19,6 @@ const initialState = {
 export const searchReducer = (state = initialState, action) => {
     switch (action.type) {
         case START_SEARCH:
-            console.log('Made it to start search');
             return {
                 ...state,
                 loading: true
@@ -29,6 +29,12 @@ export const searchReducer = (state = initialState, action) => {
                 ...state,
                 loading: false,
                 query: action.payload
+            }
+        case SEARCH_FAIL:
+            return {
+                ...state,
+                loading: false,
+                error: 'That particular food item is not yet in our daatabase.'
             }
         case FOOD_FOUND:
             return {
