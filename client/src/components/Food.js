@@ -42,7 +42,6 @@ export default function Food() {
                             <img src={state.food[0].img} alt='Food' />
                         </div>
                         <div className="food-info">
-                            {/* <h2>{state.food[0].food}</h2> */}
                             <h2>{title}</h2>
                             {state.food[0].safe === true && <h4 className="safe">Safe</h4>}
                             {state.food[0].safe === false && <h4 className="unsafe">Not Safe</h4>}

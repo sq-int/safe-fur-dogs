@@ -61,30 +61,34 @@ export const FoodResult = styled(animated.div)`
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-top: 10%;
+    margin-top: 5%;
 `;
 
 export const Summary = styled.div`
     width: 100%;
-    margin-top: 5rem;
+    margin-top: 10rem;
     height: 5rem;
-    padding: 0 10%;
+    // padding: 0 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
     p {
         font-size: 2rem;
         line-height: 2.8rem;
+        font-weight: 700;
     }
 `;
 
 export const ResourceList = styled.div`
     width: 100%;
     background: #ffffff;
-    margin-top: 10rem;
+    margin-top: 5rem;
     display: flex;
     flex-direction: column;
 
     h3 {
-        padding: 10%;
+        padding: 5% 10% 5rem;
         font-size: 3rem;
         line-height: 4rem;
         font-weight: 200;
@@ -116,9 +120,12 @@ export const Resource = styled.div`
         width: 15%;
         padding-right: 1rem;
         border-right: 1px solid #C4C4C4;
+        display: flex;
+        align-items: center;
 
         img {
             width: 100%;
+            height: 8rem;
             object-fit: contain;
         }
     }
@@ -131,8 +138,9 @@ export const Resource = styled.div`
 
         h5 {
             font-size: 2rem;
-            font-weight: 200;
+            font-weight: 900;
             line-height: 3rem;
+            margin-bottom: 1rem;
 
             a {
                 text-decoration: none;
@@ -141,6 +149,27 @@ export const Resource = styled.div`
                 &:hover {
                     color: #111111;
                 }
+            }
+        }
+
+        p {
+            font-size: 1.6rem;
+            line-height: 3.2rem;
+            font-weight: 400;
+        }
+
+        .read-more {
+            width: 100%;
+            display: flex;
+            justify-content: flex-end;
+            font-size: 1.4rem;
+            line-heihgt: 2.4rem;
+            font-weight: 900;
+            margin-top: 2rem;
+
+            a {
+                text-decoration: none;
+                color: #247d46;
             }
         }
     }

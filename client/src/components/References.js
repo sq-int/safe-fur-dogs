@@ -21,7 +21,11 @@ export default function References(props) {
                         </div>
 
                         <div className="content">
-                            <h5><Link to={r[1]}>{r[0]}</Link></h5>
+                            <h5><a target="_blank" rel="noopener noreferrer" href={r[1]}>{r[0]}</a></h5>
+                            <p>{r[2]}</p>
+                            <div className="read-more">
+                                <span><a href={r[1]} rel="noopener noreferrer">Read more...</a></span>
+                            </div>
                         </div>
                     </Resource>
                 )
