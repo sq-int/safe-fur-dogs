@@ -4,8 +4,8 @@ module.exports = {
 
   development: {
     client: 'pg',
-    connection: `postgres://squint:${process.env.DBPASS}@localhost/sfdb`,
-    // connection: `postgres://localhost/al`
+    // connection: `postgres://squint:${process.env.DBPASS}@localhost/sfdb`,
+    connection: `postgres://localhost/al`
   },
 
   production: {

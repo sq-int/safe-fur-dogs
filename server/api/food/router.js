@@ -25,10 +25,16 @@ router.get('/:name', (req, res) => {
 
     Food.getFoodByName(foodQuery)
         .then(found => {
-            res.status(200).json(found);
+            console.log('WHAT IS EVEN COMING BACK HERE ', found);
+            if(found.length) {
+                res.status(200).json(found);
+            }
+            else {
+                res.status(400).json({ error: 'That food could not be found in the database.' });
+            }
         })
         .catch(err => {
-            res.status(404).json({ error: 'That food could not be found.' });
+            res.status(500).json({ error: 'Something went wrong on our end.' });
         })
 });
 
