@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux';
 
 /* material UI */
 import Tooltip from '@material-ui/core/Tooltip';
-import { withStyles, makeStyles } from '@material-ui/core/styles';
+import { withStyles } from '@material-ui/core/styles';
 
 /* actions */
 import { searchActionTypes } from '../../actions/searchActions';
@@ -37,9 +37,9 @@ export default function Header() {
     return (
         <HeaderContainer>
             <div className="coffee">
-                <LightTooltip title="Buy Me a Coffee"><a target="_blank" href="http://buymeacoff.ee/alexlc"><img src={Coffee} alt="Buy Me a Coffee" /></a></LightTooltip>
-                <LightTooltip title="Twitter"><a target="_blank" href="http://twitter.com/safefurdogs"><img src={Twitter} alt="Twitter" /></a></LightTooltip>
-                <LightTooltip title="Instagram"><a target="_blank" href="http://instagram.com/safefurdogs"><img src={Instagram} alt="Instagram" /></a></LightTooltip>
+                <LightTooltip title="Buy Me a Coffee"><a target="_blank" rel="noopener noreferrer" href="http://buymeacoff.ee/alexlc"><img src={Coffee} alt="Buy Me a Coffee" /></a></LightTooltip>
+                <LightTooltip title="Twitter"><a target="_blank" rel="noopener noreferrer" href="http://twitter.com/safefurdogs"><img src={Twitter} alt="Twitter" /></a></LightTooltip>
+                <LightTooltip title="Instagram"><a target="_blank" rel="noopener noreferrer" href="http://instagram.com/safefurdogs"><img src={Instagram} alt="Instagram" /></a></LightTooltip>
             </div>
             <nav>
                 <Link onClick={() => dispatch({ type: RESET_SEARCH })} to="/">Home</Link>

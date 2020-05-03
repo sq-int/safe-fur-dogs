@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import { useParams, useLocation, Link } from 'react-router-dom';
+import { useParams, useLocation } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import { useSpring, animated } from 'react-spring';
+import { useSpring } from 'react-spring';
 
 /* styles */
-import { Content, InnerContainer } from '../styles/global/structure';
-import { FoodContainer, Summary, ResourceList, FoodResult } from '../styles/food';
+import { InnerContainer } from '../styles/global/structure';
+import { FoodContainer, Summary, ResourceList, FoodResult, AddFoodContainer } from '../styles/food';
 
 /* utils */
 import { capitalizeString } from '../utils/strings';
@@ -13,6 +13,7 @@ import { capitalizeString } from '../utils/strings';
 /* components */
 import References from './References';
 import NotFound from './alerts/NotFound';
+import AddFood from './AddFood';
 
 export default function Food() {
 
@@ -21,10 +22,6 @@ export default function Food() {
 
     /* bring in state */
     const state = useSelector(state => state);
-
-    /* params, history, location */
-    const params = useParams();
-    const location = useLocation();
 
     /* application state for formatted food title */
     const [title, setTitle] = useState('');
@@ -53,11 +50,10 @@ export default function Food() {
                         </div>}
 
                     {state.food === undefined || state.food.length === 0 &&
-                        <div className="error">
-                            <p>Unfortunately that food is not yet in our database.</p>
-                            <p>Would you like to help add it?</p>
+                        <AddFoodContainer>
+                            <AddFood />
                             <NotFound />
-                        </div>
+                        </AddFoodContainer>
                     }
                 </FoodContainer>
 

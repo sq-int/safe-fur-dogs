@@ -11,6 +11,7 @@ import Food from './components/Food';
 import Header from './components/structure/Header';
 import FoodList from './components/FoodList';
 import Contact from './components/Contact';
+import Footer from './components/structure/Footer';
 
 function App() {
 
@@ -34,6 +35,8 @@ function App() {
           <Food />
         </Route>
       </Switch>
+
+      <Footer />
     </Container>
   );
 }

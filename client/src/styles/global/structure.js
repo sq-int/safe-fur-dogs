@@ -17,7 +17,7 @@ export const SearchBox = styled(animated.div)`
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-top: 20%;
+    margin: 20% 0 20%;
 `;
 
 export const InnerContainer = styled.div`

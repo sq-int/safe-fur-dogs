@@ -226,3 +226,146 @@ export const FoodErrorTitle = styled.h4`
     color: #111111;
     padding: 2rem 0 0 2.2rem;
 `;
+
+export const AddFoodContainer = styled.div`
+    width: 100%;
+    margin-bottom: 5rem;
+
+    h3 {
+        font-size: 3rem;
+        font-weight: 900;
+        color: #444444;
+        line-height: 4rem;
+        margin-bottom: 2rem;
+    }
+
+    h4 {
+        font-size: 2rem;
+        font-weight: 700;
+        color: #444444;
+        line-height; 3.2rem;
+        margin: 5rem 0 1rem;
+
+        &:first-child {
+            margin-top: 0;
+        }
+    }
+
+    p {
+        font-size: 1.6rem;
+        font-weight: 200;
+        line-height: 3.2rem;
+        color: #111111;
+        margin-bottom: 1rem;
+    }
+
+    input[type=text] {
+        width: 50rem;
+        height: 4rem;
+        border: 1px solid #C4C4C4;
+        border-radius: 0.5rem;
+        font-size: 1.6rem;
+        font-weight: 200;
+        padding-left: 1rem;
+        line-height: 3.2rem;
+
+        &:focus {
+            outline: 1px solid #8dc6f7;
+        }
+    }
+
+    form {
+        width: 100%;
+        margin: 5rem 0;
+        padding: 5%;
+        background: #ffffff;
+        border-radius: 0.5rem;
+
+        button {
+            width: 50rem;
+            height: 5rem;
+            font-size: 1.6rem;
+            line-height: 3.2rem;
+            font-weight: 900;
+            border: none;
+            border-radius: 0.5rem;
+            background: #8dc6f7;
+            margin: 3rem 0;
+            color: #444444;
+            transition: all 300ms;
+
+            &:hover {
+                cursor: pointer;
+                transition: opacity 300ms;
+                opacity: 0.8;
+            }
+        }
+
+        .form-controls {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+
+        /* Customize the label (the container) */
+        .container {
+            display: block;
+            position: relative;
+            padding-left: 35px;
+            margin: 2rem 0 12px;
+            cursor: pointer;
+            font-size: 22px;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+    
+        /* Hide the browser's default radio button */
+        .container input {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+            height: 0;
+            width: 0;
+        }
+    
+        /* Create a custom radio button */
+        .checkmark {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 25px;
+            width: 25px;
+            background-color: #eee;
+            border-radius: 50%;
+        }
+    
+        /* When the radio button is checked, add a blue background */
+        .container input:checked ~ .checkmark {
+            background-color: #8dc6f7;
+        }
+    
+        /* Create the indicator (the dot/circle - hidden when not checked) */
+        .checkmark:after {
+            content: "";
+            position: absolute;
+            display: none;
+        }
+    
+        /* Show the indicator (dot/circle) when checked */
+        .container input:checked ~ .checkmark:after {
+            display: block;
+        }
+    
+        /* Style the indicator (dot/circle) */
+        .container .checkmark:after {
+            top: 9px;
+            left: 9px;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #8dc6f7;
+        }
+    }
+`;
