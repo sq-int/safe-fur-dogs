@@ -1,6 +1,6 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
-import { useSpring, animated } from 'react-spring';
+import { useSpring } from 'react-spring';
 
 /* styles */
 import { Container } from './styles/global/structure';

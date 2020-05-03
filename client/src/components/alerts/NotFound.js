@@ -17,12 +17,8 @@ export default function NotFound() {
     /* state for whether or not the alert is open or not */
     const [open, setOpen] = useState(true);
 
-    /* the following two functions handle opening and closing of
+    /* the following function handles closing of
         the alert dialogue from Material-UI */
-    const handleClickOpen = () => {
-        setOpen(true);
-    };
-
     const handleClose = () => {
         setOpen(false);
     };

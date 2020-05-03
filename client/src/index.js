@@ -6,7 +6,6 @@ import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
 import logger from 'redux-logger';
-import rootReducer from './reducers';
 import { searchReducer } from './reducers/searchReducer';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { saveState, loadState } from './utils/localStorage';
@@ -21,6 +20,13 @@ store.subscribe(_.throttle(() => {
     error: store.getState().error
   })
 }, 1000));
+
+// store.subscribe(() => {
+//   saveState({
+//     food: store.getState().food,
+//     error: store.getState().error
+//   })
+// });
 
 ReactDOM.render(
   <React.StrictMode>

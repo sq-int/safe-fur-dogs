@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { useParams, useLocation } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { useSpring } from 'react-spring';
 
@@ -34,7 +33,6 @@ export default function Food() {
 
     return (
         <FoodResult style={props}>
-            {console.log(state)}
             <InnerContainer>
                 <FoodContainer>
                     {state.food !== undefined && state.food.length > 0 &&
@@ -49,7 +47,7 @@ export default function Food() {
                             </div>
                         </div>}
 
-                    {state.food === undefined || state.food.length === 0 &&
+                    {state.error.length &&
                         <AddFoodContainer>
                             <AddFood />
                             <NotFound />

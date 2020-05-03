@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
 /* assets */
 import Lightbulb from '../assets/Lightbulb.svg';

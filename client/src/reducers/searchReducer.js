@@ -2,7 +2,6 @@ import { searchActionTypes } from '../actions';
 
 const {
     START_SEARCH,
-    SEARCH,
     SEARCH_SUCCESS,
     FOOD_FOUND,
     RESET_SEARCH,

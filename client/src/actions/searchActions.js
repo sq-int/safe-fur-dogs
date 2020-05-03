@@ -14,14 +14,15 @@ const searchItem = (item, redirect) => dispatch => {
     /* hit the backend and search for the item */
     axios.get(`http://localhost:4000/api/food/${item}`)
         .then(res => {
-            dispatch({ type: FOOD_FOUND, payload: res.data });
+            if(res.data.length > 0) {
+                dispatch({ type: FOOD_FOUND, payload: res.data });
+                redirect();
+            }
         })
         .catch(err => {
-            console.log(err);
             dispatch({ type: SEARCH_FAIL });
+            redirect();
         })
-
-        redirect();
 }
 
 export const searchActionTypes = {
