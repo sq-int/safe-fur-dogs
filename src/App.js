@@ -9,7 +9,6 @@ import { Container } from './styles/global/structure';
 import SearchView from './components/SearchView';
 import Food from './components/Food';
 import Header from './components/structure/Header';
-import FoodList from './components/FoodList';
 import Contact from './components/Contact';
 import Footer from './components/structure/Footer';
 
@@ -24,12 +23,6 @@ function App() {
       <Switch>
         <Route exact path="/">
           <SearchView />
-        </Route>
-        <Route exact path="/food">
-          <FoodList />
-        </Route>
-        <Route path="/contact">
-          <Contact />
         </Route>
         <Route exact path="/:food">
           <Food />

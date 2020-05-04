@@ -88,7 +88,7 @@ export const ResourceList = styled.div`
     flex-direction: column;
 
     h3 {
-        padding: 5% 10% 5rem;
+        padding: 10% 10% 5rem;
         font-size: 3rem;
         line-height: 4rem;
         font-weight: 200;

@@ -43,7 +43,6 @@ export default function Header() {
             </div>
             <nav>
                 <Link onClick={() => dispatch({ type: RESET_SEARCH })} to="/">Home</Link>
-                <Link to="/contact">Contact</Link>
             </nav>
         </HeaderContainer>
     )
