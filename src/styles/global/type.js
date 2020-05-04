@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { animated } from 'react-spring';
 
 export const MainHeading = styled.h1`
     font-size: 6rem;
@@ -11,4 +12,12 @@ export const MainHeading = styled.h1`
     @media (max-width: 400px) {
         font-size: 4rem;
     }
+`;
+
+export const SearchLoadingMessage = styled(animated.p)`
+    margin-top: 5rem;
+    font-size: 4rem;
+    font-weight: 900;
+    line-height: 5rem;
+    color: #444444;
 `;

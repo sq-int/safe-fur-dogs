@@ -5,6 +5,14 @@ export const MainSearch = styled.form`
     width: 50%;
     display: flex;
 
+    @media (max-width: 700px) {
+        width: 70%;
+    }
+
+    @media (max-width: 600px) {
+        width: 80%;
+    }
+
     input[type=text] {
         width: 90%;
         height: 5rem;

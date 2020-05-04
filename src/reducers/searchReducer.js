@@ -1,7 +1,7 @@
 import { searchActionTypes } from '../actions';
 
 const {
-    START_SEARCH,
+    SEARCH_START,
     SEARCH_SUCCESS,
     FOOD_FOUND,
     RESET_SEARCH,
@@ -17,7 +17,7 @@ const initialState = {
 
 export const searchReducer = (state = initialState, action) => {
     switch (action.type) {
-        case START_SEARCH:
+        case SEARCH_START:
             return {
                 ...state,
                 loading: true
@@ -38,7 +38,8 @@ export const searchReducer = (state = initialState, action) => {
         case FOOD_FOUND:
             return {
                 ...state,
-                food: action.payload
+                food: action.payload,
+                loading: false
             }
         case RESET_SEARCH:
             return initialState;

@@ -66,7 +66,7 @@ export const FoodResult = styled(animated.div)`
 
 export const Summary = styled.div`
     width: 100%;
-    margin-top: 10rem;
+    margin: 10rem 0 2rem;
     height: 5rem;
     padding: 0 10%;
     display: flex;
@@ -123,6 +123,10 @@ export const Resource = styled.div`
         display: flex;
         align-items: center;
 
+        @media (max-width: 700px) {
+            display: none;
+        }
+
         img {
             width: 100%;
             height: 8rem;
@@ -135,6 +139,10 @@ export const Resource = styled.div`
         display: flex;
         flex-direction: column;
         justify-content: center;
+
+        @media (max-width: 700px) {
+            width: 100%;
+        }
 
         h5 {
             font-size: 2rem;
