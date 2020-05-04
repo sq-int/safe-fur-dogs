@@ -1,5 +1,9 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+
+/* actions */
+import { searchActionTypes } from '../../actions/searchActions';
 
 /* material UI */
 import Dialog from '@material-ui/core/Dialog';
@@ -13,6 +17,12 @@ export default function NotFound() {
 
     /* useHistory from react-router-dom configuration */
     const history = useHistory();
+
+    /* bring in redux dispatch */
+    const dispatch = useDispatch();
+
+    /* action creators */
+    const RESET_SEARCH = searchActionTypes.RESET_SEARCH;
 
     /* state for whether or not the alert is open or not */
     const [open, setOpen] = useState(true);
@@ -40,6 +50,7 @@ export default function NotFound() {
                 <DialogActions>
                     <ErrorButton onClick={() => {
                         handleClose();
+                        dispatch({ type: RESET_SEARCH });
                         history.push(`/`);
                     }} color="primary">
                         Go Home

@@ -12,7 +12,7 @@ const searchItem = (item, redirect) => dispatch => {
     dispatch({ type: SEARCH_START });
 
     /* hit the backend and search for the item */
-    axios.get(`http://localhost:4000/api/food/${item}`)
+    axios.get(`${process.env.REACT_APP_API}/api/food/${item}`)
         .then(res => {
             if(res.data.length > 0) {
                 dispatch({ type: FOOD_FOUND, payload: res.data });
