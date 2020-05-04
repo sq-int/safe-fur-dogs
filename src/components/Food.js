@@ -47,7 +47,7 @@ export default function Food() {
                             </div>
                         </div>}
 
-                    {state.error.length &&
+                    {state.error.length !== 0 &&
                         <AddFoodContainer>
                             <AddFood />
                             <NotFound />
