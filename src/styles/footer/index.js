@@ -6,9 +6,7 @@ export const FooterContainer = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 10rem;
-    position: fixed;
-    bottom: 0;
+    margin-top: 20rem;
 
     a {
         color: #444444;
