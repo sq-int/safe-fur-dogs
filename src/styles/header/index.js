@@ -14,6 +14,19 @@ export const HeaderContainer = styled.div`
         align-items: center;
         margin-left: 5%;
 
+        @media (max-width: 700px) {
+            width: 30%;
+            justify-content: space-evenly;
+        }
+
+        @media (max-width: 550px) {
+            width: 40%;
+        }
+
+        @media (max-width: 450px) {
+            width: 50%;
+        }
+
         img {
             width: 100%;
             height: 3rem;
