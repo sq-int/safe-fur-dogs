@@ -1,6 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { useSpring } from 'react-spring';
+import { useHistory } from 'react-router-dom';
+
+/* actions */
+import { searchActionTypes } from '../actions';
 
 /* styles */
 import { InnerContainer } from '../styles/global/structure';
@@ -14,13 +18,23 @@ import References from './References';
 import NotFound from './alerts/NotFound';
 import AddFood from './AddFood';
 
+/* assets */
+import Back from '../assets/Back.svg';
+
 export default function Food() {
+
+    /* useHistory configuration */
+    const history = useHistory();
 
     /* react-spring */
     const props = useSpring({ opacity: 1, from: { opacity: 0 } });
 
-    /* bring in state */
+    /* bring in state and dispatch*/
     const state = useSelector(state => state);
+    const dispatch = useDispatch();
+
+    /* action creators */
+    const RESET_SEARCH = searchActionTypes.RESET_SEARCH;
 
     /* application state for formatted food title */
     const [title, setTitle] = useState('');
@@ -33,6 +47,14 @@ export default function Food() {
 
     return (
         <FoodResult style={props}>
+            <div className="go-back">
+                <div className="arrow">
+                    <img onClick={() => {
+                        dispatch({ type: RESET_SEARCH });
+                        history.goBack();
+                    }} src={Back} alt="Go Back" />
+                </div>
+            </div>
             <InnerContainer>
                 <FoodContainer>
                     {state.food !== undefined && state.food.length > 0 &&

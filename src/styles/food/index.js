@@ -36,12 +36,24 @@ export const FoodContainer = styled.div`
             h2 {
                 font-size: 3rem;
                 margin-bottom: 2rem;
+
+                @media (max-width: 420px) {
+                    font-size: 2rem;
+                }
             }
 
             h4 {
                 font-size: 7rem;
                 font-weight: 900;
                 line-height: 6rem;
+
+                @media (max-width: 490px) {
+                    font-size: 6rem;
+                }
+
+                @media (max-width: 420px) {
+                    font-size: 5rem;
+                }
             }
 
             .safe {
@@ -62,6 +74,28 @@ export const FoodResult = styled(animated.div)`
     align-items: center;
     justify-content: center;
     margin-top: 5%;
+
+    .go-back {
+        margin-bottom: 3rem;
+        width: 100%;
+        display: flex;
+        justfiy-content: flex-start;
+
+        .arrow {
+            width: 10%;
+            margin-left: 3.5%;
+
+            img {
+                width: 100%;
+                height: 4rem;
+                object-fit: contain;
+
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+        }
+    }
 `;
 
 export const Summary = styled.div`
