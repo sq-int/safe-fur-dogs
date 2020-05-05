@@ -50,11 +50,14 @@ function SearchView() {
         <input
           type="text"
           name="query"
-          ref={register()}
+          ref={register({ required: true, pattern: /^[a-zA-Z]+$/ })}
           autoComplete="off"
         />
         <button type="submit"><img src={Search} alt="Search" /></button>
       </MainSearch>
+
+      {errors.query && errors.query.type === 'required' && <div className="error">You must enter in a food name!</div>}
+      {errors.query && errors.query.type === 'pattern' && <div className="error">Please enter in a valid food name.</div>}
 
       {state.loading === true && <SearchLoadingMessage style={contentProps}>Searching...</SearchLoadingMessage>}
     </SearchBox>

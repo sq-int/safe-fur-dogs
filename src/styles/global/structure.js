@@ -18,6 +18,16 @@ export const SearchBox = styled(animated.div)`
     align-items: center;
     justify-content: center;
     margin: 20% 0 20%;
+
+    .error {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        color: #ff4a4a;
+        font-weight: 200;
+        font-size: 1.4rem;
+    }
 `;
 
 export const InnerContainer = styled.div`
