@@ -311,6 +311,10 @@ export const AddFoodContainer = styled.div`
         padding-left: 1rem;
         line-height: 3.2rem;
 
+        @media (max-width: 690px) {
+            width: 100%;
+        }
+
         &:focus {
             outline: 1px solid #8dc6f7;
         }
