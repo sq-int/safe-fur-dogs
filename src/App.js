@@ -10,7 +10,6 @@ import SearchView from './components/SearchView';
 import Food from './components/Food';
 import Header from './components/structure/Header';
 import Footer from './components/structure/Footer';
-import PrivateRoute from './components/structure/PrivateRoute';
 
 function App() {
 
