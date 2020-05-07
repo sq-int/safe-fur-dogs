@@ -9,8 +9,10 @@ import { Container } from './styles/global/structure';
 import SearchView from './components/SearchView';
 import Food from './components/Food';
 import Header from './components/structure/Header';
-import Contact from './components/Contact';
 import Footer from './components/structure/Footer';
+import Build from './components/structure/Build';
+import Submit from './components/structure/Submit';
+import PrivateRoute from './components/structure/PrivateRoute';
 
 function App() {
 
@@ -27,6 +29,11 @@ function App() {
         <Route exact path="/:food">
           <Food />
         </Route>
+        <Route path={process.env.REACT_APP_BUILD}>
+          <Build />
+        </Route>
+
+        <PrivateRoute exact path={process.env.REACT_APP_FOOD} component={Submit} />
       </Switch>
 
       <Footer />
