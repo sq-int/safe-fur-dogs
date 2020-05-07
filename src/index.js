@@ -18,16 +18,10 @@ store.subscribe(_.throttle(() => {
   saveState({
     food: store.getState().food,
     error: store.getState().error,
-    loading: store.getState().loading
+    loading: store.getState().loading,
+    limit: store.getState().limit
   })
 }, 1000));
-
-// store.subscribe(() => {
-//   saveState({
-//     food: store.getState().food,
-//     error: store.getState().error
-//   })
-// });
 
 ReactDOM.render(
   <React.StrictMode>

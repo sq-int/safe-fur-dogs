@@ -259,6 +259,15 @@ export const FoodErrorContent = styled.p`
     font-size: 1.4rem;
     line-height: 3rem;
     color: #444444;
+
+    a {
+        color: #444444;
+        font-weight: 700;
+
+        &:hover {
+            color: #111111;
+        }
+    }
 `;
 
 export const FoodErrorTitle = styled.h4`

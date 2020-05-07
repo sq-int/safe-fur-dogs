@@ -2,7 +2,7 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
-import { useSpring, animated } from 'react-spring';
+import { useSpring } from 'react-spring';
 
 /* actions */
 import { searchActionCreators } from '../actions';
