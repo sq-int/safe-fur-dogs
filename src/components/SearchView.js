@@ -43,7 +43,6 @@ function SearchView() {
 
   return (
     <SearchBox>
-      {console.log('CURRENT STATE ', state)}
       <MainHeading>Safe Fur Dogs</MainHeading>
 
       <MainSearch onSubmit={handleSubmit(onSubmit)}>

@@ -5,14 +5,14 @@ import App from './App';
 import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
-import logger from 'redux-logger';
+// import logger from 'redux-logger';
 import { searchReducer } from './reducers/searchReducer';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { saveState, loadState } from './utils/localStorage';
 import _ from 'lodash';
 
 const persistedState = loadState();
-const store = createStore(searchReducer, persistedState, applyMiddleware(thunk, logger));
+const store = createStore(searchReducer, persistedState, applyMiddleware(thunk));
 
 store.subscribe(_.throttle(() => {
   saveState({
