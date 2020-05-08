@@ -1,20 +1,52 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import axios from 'axios';
+import { useDispatch } from 'react-redux';
+import { useHistory } from 'react-router-dom';
+
+/* actions */
+import { searchActionTypes } from '../actions/searchActions';
+
+/* material UI */
+import Dialog from '@material-ui/core/Dialog';
+import DialogActions from '@material-ui/core/DialogActions';
+import DialogContent from '@material-ui/core/DialogContent';
+
+/* styles */
+import { ErrorButton, FoodErrorContent, FoodErrorTitle } from '../styles/food';
 
 export default function AddFood() {
 
+    /* bring in redux dispatch and config */
+    const dispatch = useDispatch();
+
+    /* action creators */
+    const RESET_SEARCH = searchActionTypes.RESET_SEARCH;
+
+    /* useHistory from react-router-dom configuration */
+    const history = useHistory();
+
     const { register, handleSubmit, errors } = useForm();
+
+    const [submitted, setSubmitted] = useState(false);
 
     const onSubmit = (data) => {
         axios.post(`${process.env.REACT_APP_API}/api/request`, data)
             .then(res => {
-                console.log(res);
+                console.log('Thank you!');
             })
             .catch(err => {
                 console.log(err);
             })
+
+        setSubmitted(true);
     }
+
+    /* the following function handles closing of
+    the alert dialogue from Material-UI */
+    const handleClose = () => {
+        setSubmitted(false);
+    };
 
     return (
         <>
@@ -32,7 +64,7 @@ export default function AddFood() {
 
             <form onSubmit={handleSubmit(onSubmit)}>
                 <h4>What Food do We Need to Add?</h4>
-                <input type="text" name="food" placeholder="Food Name" ref={register({ required: true })} />
+                <input type="text" name="food" placeholder="Food Name" ref={register({ required: true })} autoComplete="off" />
 
                 <h4>Is It Safe for Dogs to Consume?</h4>
                 <label className="container">Yes
@@ -48,6 +80,30 @@ export default function AddFood() {
                     <button type="submit">Submit Information</button>
                 </div>
             </form>
+
+            {submitted === true &&
+                <Dialog
+                    open={submitted}
+                    onClose={handleClose}
+                    aria-labelledby="alert-dialog-title"
+                    aria-describedby="alert-dialog-description"
+                >
+                    <FoodErrorTitle id="alert-dialog-title">{"Thank you!"}</FoodErrorTitle>
+                    <DialogContent>
+                        <FoodErrorContent id="alert-dialog-description">
+                            Your information and request has been submitted and we will work on adding it!
+                        </FoodErrorContent>
+                    </DialogContent>
+                    <DialogActions>
+                        <ErrorButton onClick={() => {
+                            setSubmitted(true);
+                            dispatch({ type: RESET_SEARCH });
+                            history.push(`/`);
+                        }} color="primary">
+                            Go Home
+                        </ErrorButton>
+                    </DialogActions>
+                </Dialog>}
         </>
     )
 }
