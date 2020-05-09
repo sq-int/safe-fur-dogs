@@ -14,6 +14,12 @@ export const MainHeading = styled.h1`
     }
 `;
 
+export const SecondaryHeading = styled.h2`
+    font-size: 4rem;
+    font-weight: 900;
+    margin: 1rem 0 3rem;
+`;
+
 export const SearchLoadingMessage = styled(animated.p)`
     margin-top: 5rem;
     font-size: 4rem;
@@ -21,3 +27,4 @@ export const SearchLoadingMessage = styled(animated.p)`
     line-height: 5rem;
     color: #444444;
 `;
+

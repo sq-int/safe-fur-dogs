@@ -49,7 +49,7 @@ function SearchView() {
         <input
           type="text"
           name="query"
-          ref={register({ required: true, pattern: /^[a-zA-Z]+$/ })}
+          ref={register({ required: true, pattern: /^[a-zA-Z ]+$/ })}
           autoComplete="off"
         />
         <button type="submit"><img src={Search} alt="Search" /></button>

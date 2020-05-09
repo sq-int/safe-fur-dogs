@@ -10,6 +10,9 @@ import SearchView from './components/SearchView';
 import Food from './components/Food';
 import Header from './components/structure/Header';
 import Footer from './components/structure/Footer';
+import PrivacyPolicy from './components/docs/PrivacyPolicy';
+import TermsOfService from './components/docs/TermsOfService';
+import Docs from './components/docs/Docs';
 
 function App() {
 
@@ -23,6 +26,20 @@ function App() {
         <Route exact path="/">
           <SearchView />
         </Route>
+
+
+        {/* DOCS */}
+        <Route exact path="/docs">
+          <Docs />
+        </Route>
+        <Route exact path="/privacy-policy">
+          <PrivacyPolicy />
+        </Route>
+        <Route exact path="/terms-of-service">
+          <TermsOfService />
+        </Route>
+
+
         <Route exact path="/:food">
           <Food />
         </Route>
