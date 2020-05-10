@@ -25,21 +25,20 @@ const searchItem = (item, redirect) => dispatch => {
         .catch(err => {
             if (err.response.status === 429) {
                 dispatch({ type: RATE_LIMIT });
-                redirect();
+                redirect(`/`);
             }
             else {
                 axios.get(`${process.env.REACT_APP_API}/${process.env.REACT_APP_SUGGESTED}/${item}`)
                 .then(res => {
                     if(res.data.length !== 0) {
-                        console.log(`SUCCESSFUL RESPONSE FOR SUGGESTIONS`);
-                        console.log(`WHAT IT IS`, res);
+                        alert('WE FOUND SUGGESTIONS');
                         dispatch({ type: SUGGESTIONS, payload: res.data });
                         redirect(`suggestions/${item}`);
                     }
                     else if(res.data.length === 0) {
-                        console.log(`UNSUCCESSFUL RESPONSE FOR SUGGESTIONS`);
+                        alert('WE FAILED OUR SEARCH');
                         dispatch({ type: SEARCH_FAIL });
-                        redirect(`${item}`);
+                        // redirect(`${item}`);
                     }
                 })
                 .catch(err => {
