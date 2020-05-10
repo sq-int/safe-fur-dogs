@@ -1,6 +1,7 @@
 import styled from 'styled-components';
+import { animated } from 'react-spring';
 
-export const SuggestionContainer = styled.div`
+export const SuggestionContainer = styled(animated.div)`
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -8,7 +9,7 @@ export const SuggestionContainer = styled.div`
     margin: 5rem 0;
 `;
 
-export const FoodSuggestion = styled.div`
+export const FoodSuggestion = styled(animated.div)`
     width: 100%;
     display: flex;
     margin: 2.5rem 0;
@@ -23,6 +24,19 @@ export const FoodSuggestion = styled.div`
             width: 100%;
             height: 6rem;
             object-fit: contain;
+        }
+
+        @media (max-width: 1200px) {
+            padding-right: 1rem;
+        }
+
+        @media (max-width: 800px) {
+            width: 20%;
+            padding-right: 2rem;
+        }
+
+        @media (max-width: 500px) {
+            width: 25%;
         }
     }
 

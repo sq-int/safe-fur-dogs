@@ -16,6 +16,7 @@ export const MainHeading = styled.h1`
 
 export const SecondaryHeading = styled.h2`
     font-size: 4rem;
+    line-height: 5rem;
     font-weight: 900;
     margin: 1rem 0 3rem;
 `;

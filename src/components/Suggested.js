@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
+import { useSpring } from 'react-spring';
 
 import { SuggestionContainer, FoodSuggestion } from '../styles/suggestions';
 import { SecondaryHeading } from '../styles/global/type';
@@ -9,6 +10,9 @@ import { SecondaryHeading } from '../styles/global/type';
 import { searchActionCreators } from '../actions';
 
 export default function Suggested() {
+
+    /* react-spring */
+    const props = useSpring({ opacity: 1, from: { opacity: 0 } });
 
     /* useHistory */
     const history = useHistory();
@@ -21,7 +25,7 @@ export default function Suggested() {
     const searchItem = searchActionCreators.searchItem;
 
     return (
-        <SuggestionContainer>
+        <SuggestionContainer style={props}>
             <SecondaryHeading>What were you searching for?</SecondaryHeading>
 
             {state.suggestions !== undefined && state.suggestions.length !== 0 && 

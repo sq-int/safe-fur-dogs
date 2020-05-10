@@ -3,7 +3,6 @@ import styled from 'styled-components';
 
 export const Container = styled(animated.div)`
     width: 100%;
-    // max-width: 1440px;
     display: flex;
     flex-direction: column;
     align-items: center;
