@@ -14,6 +14,7 @@ import PrivacyPolicy from './components/docs/PrivacyPolicy';
 import TermsOfService from './components/docs/TermsOfService';
 import Docs from './components/docs/Docs';
 import Suggested from './components/Suggested';
+import AddFood from './components/AddFood';
 
 function App() {
 
@@ -38,6 +39,9 @@ function App() {
         </Route>
         <Route exact path="/terms-of-service">
           <TermsOfService />
+        </Route>
+        <Route exact path="/add-food">
+          <AddFood />
         </Route>
 
 
