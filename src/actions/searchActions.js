@@ -35,7 +35,6 @@ const searchItem = (item, redirect) => dispatch => {
                         redirect(`suggestions/${item}`);
                     }
                     else {
-                        console.log(`WE MADE IT TO FAIL BLOCK`);
                         dispatch({ type: SEARCH_FAIL });
                         redirect(`${item}`);
                     }

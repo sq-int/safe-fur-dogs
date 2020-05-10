@@ -22,8 +22,6 @@ export default function Suggested() {
 
     return (
         <SuggestionContainer>
-            {console.log(`CURRENT STATE IN SUGGESTIONS COMPONENT `, state)}
-
             <SecondaryHeading>What were you searching for?</SecondaryHeading>
 
             {state.suggestions !== undefined && state.suggestions.length !== 0 && 
