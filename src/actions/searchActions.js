@@ -28,24 +28,33 @@ const searchItem = (item, redirect) => dispatch => {
                 redirect(`/`);
             }
             else {
-                axios.get(`${process.env.REACT_APP_API}/${process.env.REACT_APP_SUGGESTED}/${item}`)
-                .then(res => {
-                    if(res.data.length !== 0) {
-                        alert('WE FOUND SUGGESTIONS');
-                        dispatch({ type: SUGGESTIONS, payload: res.data });
-                        redirect(`suggestions/${item}`);
-                    }
-                    else if(res.data.length === 0) {
-                        alert('WE FAILED OUR SEARCH');
-                        dispatch({ type: SEARCH_FAIL });
-                        // redirect(`${item}`);
-                    }
-                })
-                .catch(err => {
-                    console.log(err);
-                })
+                dispatch(searchSuggestions(item, redirect));
             }
         })
+}
+
+const searchSuggestions = (item, redirect) => dispatch => {
+    dispatch({ type: SUGGEST_START });
+
+    axios.get(`${process.env.REACT_APP_API}/${process.env.REACT_APP_SUGGESTED}/${item}`)
+    .then(res => {
+        if(res.data.length !== 0) {
+            alert('WE FOUND SUGGESTIONS');
+            dispatch({ type: SUGGESTIONS, payload: res.data });
+            redirect(`suggestions/${item}`);
+        }                    
+        else if(res.data.length === 0) {
+            alert('WE FAILED OUR SEARCH');
+            dispatch({ type: SEARCH_FAIL });
+            redirect(`${item}`);
+        }
+    })
+    .catch(err => {
+        // console.log(err);
+        alert('WE FAILED OUR SEARCH');
+        dispatch({ type: SEARCH_FAIL });
+    })
+
 }
 
 export const searchActionTypes = {
@@ -61,5 +70,6 @@ export const searchActionTypes = {
 }
 
 export const searchActionCreators = {
-    searchItem
+    searchItem,
+    searchSuggestions
 }
