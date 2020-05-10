@@ -34,7 +34,7 @@ const searchItem = (item, redirect) => dispatch => {
                         dispatch({ type: SUGGESTIONS, payload: res.data });
                         redirect(`suggestions/${item}`);
                     }
-                    else {
+                    else if(err.response.status === 400) {
                         dispatch({ type: SEARCH_FAIL });
                         redirect(`${item}`);
                     }
