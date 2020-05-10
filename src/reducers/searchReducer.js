@@ -37,7 +37,7 @@ export const searchReducer = (state = initialState, action) => {
             return {
                 ...state,
                 loading: false,
-                error: 'That particular food item is not yet in our daatabase.'
+                error: 'That particular food item is not yet in our database.'
             }
         case SUGGEST_START:
             return {

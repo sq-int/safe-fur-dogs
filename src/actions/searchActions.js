@@ -30,11 +30,14 @@ const searchItem = (item, redirect) => dispatch => {
             else {
                 axios.get(`${process.env.REACT_APP_API}/${process.env.REACT_APP_SUGGESTED}/${item}`)
                 .then(res => {
-                    if(res.data.length) {
+                    if(res.data.length !== 0) {
+                        console.log(`SUCCESSFUL RESPONSE FOR SUGGESTIONS`);
+                        console.log(`WHAT IT IS`, res);
                         dispatch({ type: SUGGESTIONS, payload: res.data });
                         redirect(`suggestions/${item}`);
                     }
-                    else if(err.response.status === 400) {
+                    else if(res.data.length === 0) {
+                        console.log(`UNSUCCESSFUL RESPONSE FOR SUGGESTIONS`);
                         dispatch({ type: SEARCH_FAIL });
                         redirect(`${item}`);
                     }
