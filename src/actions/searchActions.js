@@ -27,8 +27,11 @@ const searchItem = (item, redirect) => dispatch => {
                 dispatch({ type: RATE_LIMIT });
                 redirect(`/`);
             }
-            else {
+            else if(err.response.status === 400) {
                 dispatch(searchSuggestions(item, redirect));
+            }
+            else {
+                alert(`HOW THE FK DID WE GET HERE?`);
             }
         })
 }
