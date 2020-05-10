@@ -4,6 +4,8 @@ const SEARCH_START = 'SEARCH_START';
 const SEARCH = 'SEARCH';
 const SEARCH_SUCCESS = 'SEARCH_SUCCESS';
 const SEARCH_FAIL = 'SEARCH_FAIL';
+const SUGGEST_START = 'SUGGEST_START';
+const SUGGESTIONS = 'SUGGESTIONS';
 const FOOD_FOUND = 'FOOD_FOUND';
 const RESET_SEARCH = 'RESET_SEARCH';
 const RATE_LIMIT = 'RATE_LIMIT';
@@ -17,7 +19,7 @@ const searchItem = (item, redirect) => dispatch => {
         .then(res => {
             if (res.data.length > 0) {
                 dispatch({ type: FOOD_FOUND, payload: res.data });
-                redirect();
+                redirect(`${item}`);
             }
         })
         .catch(err => {
@@ -26,8 +28,14 @@ const searchItem = (item, redirect) => dispatch => {
                 redirect();
             }
             else {
-                dispatch({ type: SEARCH_FAIL });
-                redirect();
+                axios.get(`${process.env.REACT_APP_API}/${process.env.REACT_APP_SUGGESTED}/${item}`)
+                .then(res => {
+                    dispatch({ type: SUGGESTIONS, payload: res.data });
+                    redirect(`suggestions/${item}`);
+                })
+                .catch(err => {
+                    console.log(err);
+                })
             }
         })
 }
@@ -37,6 +45,8 @@ export const searchActionTypes = {
     SEARCH,
     SEARCH_SUCCESS,
     SEARCH_FAIL,
+    SUGGEST_START,
+    SUGGESTIONS,
     FOOD_FOUND,
     RESET_SEARCH,
     RATE_LIMIT

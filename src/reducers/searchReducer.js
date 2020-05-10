@@ -3,6 +3,8 @@ import { searchActionTypes } from '../actions';
 const {
     SEARCH_START,
     SEARCH_SUCCESS,
+    SUGGEST_START,
+    SUGGESTIONS,
     FOOD_FOUND,
     RESET_SEARCH,
     SEARCH_FAIL,
@@ -14,7 +16,8 @@ const initialState = {
     error: '',
     query: '',
     limit: false,
-    food: []
+    food: [],
+    suggestions: []
 }
 
 export const searchReducer = (state = initialState, action) => {
@@ -35,6 +38,18 @@ export const searchReducer = (state = initialState, action) => {
                 ...state,
                 loading: false,
                 error: 'That particular food item is not yet in our daatabase.'
+            }
+        case SUGGEST_START:
+            return {
+                ...state,
+                loading: true,
+            }
+        case SUGGESTIONS:
+            return {
+                ...state,
+                loading: false,
+                suggestions: action.payload,
+                error: ''
             }
         case RATE_LIMIT:
             return {

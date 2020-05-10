@@ -32,7 +32,7 @@ function SearchView() {
 
   /* handle form submission */
   const onSubmit = (data) => {
-    dispatch(searchItem(data.query, () => history.push(`/${data.query}`)));
+    dispatch(searchItem(data.query, (path) => history.push(`/${path}`)));
   }
 
   /* react-spring configuration */
