@@ -40,7 +40,8 @@ const searchItem = (item, redirect) => dispatch => {
             //     alert(`HOW THE FK DID WE GET HERE?`);
             // }
 
-            console.log(err);
+            dispatch({ type: SEARCH_FAIL });
+            redirect(`${item}`);
         })
 }
 
