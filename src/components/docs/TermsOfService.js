@@ -38,6 +38,11 @@ export default function TermsOfService() {
             <p>We reserve the right to refuse service to anyone for any reason at any time.</p>
 
             <p>As Safe Fur Dogs is a free online database of information, we must limit the amount of searches made due to server and hosting costs. If a user is found to be abusing the search functionality and submitting an excessive amount of searches, we reserve the right to halt incoming connections from the individual.</p>
+
+            <h3>Liability</h3>
+            <p>Safe Fur Dogs uses external sources and references to provide the safety decision displayed when searching for a particular food. Sources and references used are from reputable websites and databases.</p>
+
+            <p>As with any consumption, however, experiences and reactions vary from animal to animal. You should always make sure to consult a veterinarian to determine if your dog is allergic or sensitive to a particular food. Safe Fur Dogs is not liable for any injury, fatality, or harm that may result from feeding your dog a food that a user searched for through our database of information.</p>
         </DocContainer>
     )
 }

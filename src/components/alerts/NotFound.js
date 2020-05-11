@@ -36,7 +36,6 @@ export default function NotFound() {
 
     return (
         <div>
-            {console.log(`CURRENT STATE `, state)}
             {state.limit === false &&
                 <Dialog
                     open={open}
@@ -75,7 +74,7 @@ export default function NotFound() {
                     <DialogContent>
                         <FoodErrorContent id="alert-dialog-description">
                             Because Safe Fur Dogs is a free service, we must limit the amount of searches made due to hosting costs. You have made
-                             too many requests. Please wait a bit until making another search or consider <a target="_blank" rel="noopener noreferrer" href="http://buymeacoff.ee/alexlc">buying me a coffee</a> so our limits can be increased.
+                             too many requests. Please wait a bit until making another search or consider <a target="_blank" rel="noopener noreferrer" href="http://buymeacoff.ee/alexlc">buying me a coffee</a> so our limits can be increased. Sorry for the inconvenience!
                         </FoodErrorContent>
                     </DialogContent>
                     <DialogActions>

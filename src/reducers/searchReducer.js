@@ -4,7 +4,6 @@ const {
     SEARCH_START,
     SEARCH_SUCCESS,
     SUGGEST_START,
-    SUGGESTIONS,
     SUGGESTIONS_FOUND,
     FOOD_FOUND,
     RESET_SEARCH,
@@ -45,15 +44,7 @@ export const searchReducer = (state = initialState, action) => {
                 ...state,
                 loading: true,
             }
-        case SUGGESTIONS:
-            return {
-                ...state,
-                loading: false,
-                suggestions: action.payload,
-                error: ''
-            }
         case SUGGESTIONS_FOUND:
-            console.log('SUGGESTIONS FOUND. HERE FROM REDUCER');
             return {
                 ...state,
                 loading: false,
