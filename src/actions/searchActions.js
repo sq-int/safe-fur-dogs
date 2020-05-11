@@ -82,6 +82,5 @@ export const searchActionTypes = {
 }
 
 export const searchActionCreators = {
-    searchItem,
-    searchSuggestions
+    searchItem
 }
