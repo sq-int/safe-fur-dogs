@@ -52,7 +52,7 @@ export default function AddFood() {
         <>
             <h3>Submit Food to our Collection</h3>
 
-            <p>There is <strong>A LOT</strong> of food and snacks that our pups can get into or that they can be given. Becuse of this, it's virtually impossible
+            <p>There is <strong>A LOT</strong> of food and snacks that our pups can get into or that they can be given. Because of this, it's virtually impossible
         for us to compile a complete list of <strong>all</strong> food in the world. However, with dedicated research and help from the community, we can compile
         as complete of a list to be used as a resource and references as possible.</p>
 
