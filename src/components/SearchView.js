@@ -5,7 +5,7 @@ import { useHistory } from 'react-router-dom';
 import { useSpring } from 'react-spring';
 
 /* actions */
-import { searchActionCreators } from '../actions';
+import { searchActionCreators } from '../redux/actions';
 
 /* styles */
 import { SearchBox } from '../styles/global/structure';
@@ -43,7 +43,6 @@ function SearchView() {
 
   return (
     <SearchBox>
-      {console.log(`STATE?: `, state)}
       <MainHeading>Safe Fur Dogs</MainHeading>
 
       <MainSearch onSubmit={handleSubmit(onSubmit)}>

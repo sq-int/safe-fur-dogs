@@ -7,7 +7,7 @@ import Tooltip from '@material-ui/core/Tooltip';
 import { withStyles } from '@material-ui/core/styles';
 
 /* actions */
-import { searchActionTypes } from '../../actions/searchActions';
+import { searchActionTypes } from '../../redux/actions/searchActions';
 
 /* styles */
 import { HeaderContainer } from '../../styles/header';

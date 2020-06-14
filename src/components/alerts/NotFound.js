@@ -3,7 +3,7 @@ import { useHistory } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 
 /* actions */
-import { searchActionTypes } from '../../actions/searchActions';
+import { searchActionTypes } from '../../redux/actions/searchActions';
 
 /* material UI */
 import Dialog from '@material-ui/core/Dialog';

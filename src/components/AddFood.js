@@ -5,7 +5,7 @@ import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 
 /* actions */
-import { searchActionTypes } from '../actions/searchActions';
+import { searchActionTypes } from '../redux/actions/searchActions';
 
 /* material UI */
 import Dialog from '@material-ui/core/Dialog';
@@ -64,7 +64,10 @@ export default function AddFood() {
 
             <form onSubmit={handleSubmit(onSubmit)}>
                 <h4>What Food do We Need to Add?</h4>
-                <input type="text" name="food" placeholder="Food Name" ref={register({ required: true })} autoComplete="off" />
+                <input type="text" name="food" placeholder="Food Name" ref={register({ required: true, pattern: /^[a-zA-Z0-9 ]+$/ })} autoComplete="off" />
+
+                {errors.food && errors.food.type === 'required' && <p className="error">Please enter a valid food.</p>}
+                {errors.food && errors.food.type === 'pattern' && <p className="error">Food should only contain letters and possibly numbers.</p>}
 
                 <h4>Is It Safe for Dogs to Consume?</h4>
                 <label className="container">Yes
@@ -75,6 +78,8 @@ export default function AddFood() {
                 <input type="radio" name="safe" value="no" ref={register({ required: true })} />
                     <span className="checkmark"></span>
                 </label>
+
+                {errors.safe && errors.safe.type === 'required' && <p className="error">Please select yes or no for consumption safety.</p>}
 
                 <div className="form-controls">
                     <button type="submit">Submit Information</button>

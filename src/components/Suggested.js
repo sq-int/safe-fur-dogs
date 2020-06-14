@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import { useSpring } from 'react-spring';
@@ -7,7 +7,7 @@ import { SuggestionContainer, FoodSuggestion } from '../styles/suggestions';
 import { SecondaryHeading } from '../styles/global/type';
 
 /* actions */
-import { searchActionCreators } from '../actions';
+import { searchActionCreators } from '../redux/actions';
 
 export default function Suggested() {
 

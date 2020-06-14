@@ -8,6 +8,11 @@ export const Container = styled(animated.div)`
     align-items: center;
     justify-content: center;
     margin: 0 auto;
+
+    p.error {
+        color: red;
+        margin: 1rem 0;
+    }
 `;
 
 export const SearchBox = styled(animated.div)`

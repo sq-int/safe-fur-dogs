@@ -4,7 +4,7 @@ import { useSpring } from 'react-spring';
 import { useHistory } from 'react-router-dom';
 
 /* actions */
-import { searchActionTypes } from '../actions';
+import { searchActionTypes } from '../redux/actions';
 
 /* styles */
 import { InnerContainer } from '../styles/global/structure';
