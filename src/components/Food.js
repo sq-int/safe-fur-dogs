@@ -50,7 +50,6 @@ export default function Food() {
             <div className="go-back">
                 <div className="arrow">
                     <img onClick={() => {
-                        // dispatch({ type: RESET_SEARCH });
                         history.goBack();
                     }} src={Back} alt="Go Back" />
                 </div>
