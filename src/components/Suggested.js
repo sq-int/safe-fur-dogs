@@ -19,7 +19,7 @@ export default function Suggested() {
 
     /* redux config */
     const dispatch = useDispatch();
-    const state = useSelector(state => state);
+    const state = useSelector(state => state.searchReducer);
     
     /* action creators */
     const searchItem = searchActionCreators.searchItem;

@@ -30,7 +30,7 @@ export default function Food() {
     const props = useSpring({ opacity: 1, from: { opacity: 0 } });
 
     /* bring in state and dispatch*/
-    const state = useSelector(state => state);
+    const state = useSelector(state => state.searchReducer);
     const dispatch = useDispatch();
 
     /* action creators */
@@ -50,7 +50,7 @@ export default function Food() {
             <div className="go-back">
                 <div className="arrow">
                     <img onClick={() => {
-                        dispatch({ type: RESET_SEARCH });
+                        // dispatch({ type: RESET_SEARCH });
                         history.goBack();
                     }} src={Back} alt="Go Back" />
                 </div>

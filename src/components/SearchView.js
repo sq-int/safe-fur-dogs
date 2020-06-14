@@ -19,7 +19,7 @@ function SearchView() {
 
   /* redux config */
   const dispatch = useDispatch();
-  const state = useSelector(state => state);
+  const state = useSelector(state => state.searchReducer);
 
   /* history and params */
   const history = useHistory();
@@ -43,6 +43,7 @@ function SearchView() {
 
   return (
     <SearchBox>
+      {console.log(`STATE?: `, state)}
       <MainHeading>Safe Fur Dogs</MainHeading>
 
       <MainSearch onSubmit={handleSubmit(onSubmit)}>
