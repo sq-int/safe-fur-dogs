@@ -32,6 +32,21 @@ export const SearchBox = styled(animated.div)`
         font-weight: 200;
         font-size: 1.4rem;
     }
+
+    div.search-preview {
+        margin-top: 1.5rem;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        height: 10rem;
+        text-align: center;
+
+        p {
+            width: 70rem;
+            font-size: 3rem;
+            color: #24767A;
+        }
+    }
 `;
 
 export const InnerContainer = styled.div`

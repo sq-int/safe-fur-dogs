@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const MainSearch = styled.form`
-    margin: 2rem 0;
+    margin: 0;
     width: 50%;
     display: flex;
 

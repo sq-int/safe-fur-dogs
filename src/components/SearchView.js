@@ -3,6 +3,7 @@ import { useForm } from 'react-hook-form';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import { useSpring } from 'react-spring';
+import TypeIt from "typeit-react";
 
 /* actions */
 import { searchActionCreators } from '../redux/actions';
@@ -44,12 +45,33 @@ function SearchView() {
   return (
     <SearchBox>
       <MainHeading>Safe Fur Dogs</MainHeading>
+      <div className="search-preview">
+        <TypeIt element={"p"} options={{ loop: true }} getBeforeInit={instance => {
+          instance
+            .type("Can dogs eat eggs?")
+            .pause(750)
+            .delete(5)
+            .pause(500)
+            .type("grapes?")
+            .pause(750)
+            .delete(7)
+            .pause(500)
+            .type("chicken?")
+            .pause(750)
+            .delete(8)
+            .pause(500)
+            .type("chocolate?");
+
+          return instance;
+        }} />
+      </div>
 
       <MainSearch onSubmit={handleSubmit(onSubmit)}>
         <input
           type="text"
           name="query"
           ref={register({ required: true, pattern: /^[a-zA-Z ]+$/ })}
+          placeholder="Bananas..."
           autoComplete="off"
         />
         <button type="submit"><img src={Search} alt="Search" /></button>

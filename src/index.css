@@ -58,3 +58,8 @@ html {
   font-family: 'Nunito', sans-serif;
   background: #bfffe9;
 }
+
+h3 {
+	font-size: 1.8rem;
+	font-weight: 900;
+}
