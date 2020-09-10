@@ -45,6 +45,15 @@ export const SearchBox = styled(animated.div)`
             width: 70rem;
             font-size: 3rem;
             color: #24767A;
+
+            @media (max-width: 700px) {
+                width: 50rem;
+            }
+
+            @media (max-width: 500px) {
+                font-size: 2.5rem;
+                width: 30rem;
+            }
         }
     }
 `;
