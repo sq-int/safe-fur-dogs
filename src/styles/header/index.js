@@ -4,7 +4,7 @@ export const HeaderContainer = styled.div`
     width: 100%;
     height: 7rem;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
 
     .coffee {

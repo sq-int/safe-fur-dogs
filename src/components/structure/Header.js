@@ -36,11 +36,14 @@ export default function Header() {
 
     return (
         <HeaderContainer>
-            <div className="coffee">
+            {/* Removed for now because there's not nearly enough traffic
+                at the moment. Perhaps later down the road this will be re-added. */}
+            {/* <div className="coffee">
                 <LightTooltip title="Buy Me a Coffee"><a target="_blank" rel="noopener noreferrer" href="http://buymeacoff.ee/alexlc"><img src={Coffee} alt="Buy Me a Coffee" /></a></LightTooltip>
                 <LightTooltip title="Twitter"><a target="_blank" rel="noopener noreferrer" href="http://twitter.com/safefurdogs"><img src={Twitter} alt="Twitter" /></a></LightTooltip>
                 <LightTooltip title="Instagram"><a target="_blank" rel="noopener noreferrer" href="http://instagram.com/safefurdogs"><img src={Instagram} alt="Instagram" /></a></LightTooltip>
-            </div>
+            </div> */}
+
             <nav>
                 <Link onClick={() => dispatch({ type: RESET_SEARCH })} to="/">Home</Link>
                 <Link to="/docs">Docs</Link>
