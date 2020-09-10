@@ -10,17 +10,11 @@ Safe Fur Dogs is an online database providing a way to quickly ensure that food 
 
 ### Front end:
 
-React.js, Redux, styled-components, react-router-dom, react-hook-form
+React.js, Redux, styled-components, react-router-dom, react-hook-form, react-spring
 
 # Content Licenses
-|FileName|Source / Creator|License|
-|---|---|---|
-|Dog.svg|Flaticon|[MIT](http://www.flaticon.com)|
-|Bone.svg|Flaticon|[MIT](http://www.flaticon.com)|
-|Search.svg|IconFinder|[MIT](http://iconfinder.com)|
-|Coffee.svg|FlatIcon|[MIT](http://iconfinder.com)|
-|Social Media Icons|FlatIcon|[MIT](http://iconfinder.com)|
-|All food icons|FlatIcon|[MIT](http://www.flaticon.com)|
+
+All food icons are from [Flaticon](http://flaticon.com) and [IconFinder](http://iconfinder.com)
 
 # Testing
 
