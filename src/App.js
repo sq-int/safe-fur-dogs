@@ -31,10 +31,8 @@ function App() {
         </Route>
 
 
-        {/* DOCS */}
         <Route exact path="/about">
           <About />
-          {/* <Docs /> */}
         </Route>
         <Route exact path="/privacy-policy">
           <PrivacyPolicy />

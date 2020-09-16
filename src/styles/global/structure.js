@@ -1,7 +1,10 @@
 import { animated } from 'react-spring';
 import styled from 'styled-components';
 
+// general purpose container to be used for structural styling
 export const Contain = styled(animated.div)`
+    padding: ${props => props.padding ? `${props.padding}` : 'null'};
+    margin: ${props => props.margin ? `${props.margin}` : 'null'};
     width: ${props => props.width ? `${props.width}` : '100%'};
     height: ${props => props.height ? `${props.height}` : 'null'};
     display: ${props => props.display ? `${props.display}` : 'inline-block'};
@@ -10,9 +13,16 @@ export const Contain = styled(animated.div)`
     align-items: ${props => props.align ? `${props.align}` : 'flex-start'};
 `
 
+// general purpose content block to be used for structural styling
 export const Block = styled.div`
     width: ${props => props.width ? `${props.width}` : '100%'};
     height: ${props => props.height ? `${props.height}` : 'null'};
+    display: ${props => props.display ? `${props.display}` : 'inline-block'};
+    flex-direction: ${props => props.direction ? `${props.direction}` : 'row'};
+    justify-content: ${props => props.justify ? `${props.justify}` : 'flex-start'};
+    align-items: ${props => props.align ? `${props.align}` : 'flex-start'};
+    padding: ${props => props.padding ? `${props.padding}` : 'null'};
+    margin: ${props => props.margin ? `${props.margin}` : 'null'};
 `
 
 export const Container = styled(animated.div)`
@@ -76,17 +86,12 @@ export const InnerContainer = styled.div`
     width: 100%;
 `;
 
+// container housing links to documentation
 export const DocContainer = styled.div`
     width: 100%;
     display: flex;
     flex-direction: column;
-    margin: 5rem 0;
-    padding: 0 10%;
-
-    h3 {
-        font-size: 3rem;
-        margin: 5rem 0 1rem;
-    }
+    align-items: flex-start;
 
     p {
         font-size: 1.6rem;
@@ -125,3 +130,10 @@ export const DocContainer = styled.div`
         }
     }
 `;
+
+export const DocTitle = styled.h3`
+    font-size: 2.6rem;
+    padding: ${props => props.padding ? `${props.padding}` : 'null'};
+    margin: ${props => props.margin ? `${props.margin}` : 'null'};
+    color: ${props => props.color ? `${props.color}` : '#000000'};
+`
