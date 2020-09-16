@@ -100,10 +100,6 @@ export const DocContainer = styled.div`
         margin-bottom: 2rem;
     }
 
-    .last-updated {
-        font-weight: 900;
-    }
-
     a {
         color: #444444;
         font-weight: 700;

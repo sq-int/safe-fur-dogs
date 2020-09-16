@@ -12,7 +12,6 @@ import Header from './components/structure/Header';
 import Footer from './components/structure/Footer';
 import PrivacyPolicy from './components/docs/PrivacyPolicy';
 import TermsOfService from './components/docs/TermsOfService';
-import Docs from './components/docs/Docs';
 import About from './components/About';
 import Suggested from './components/Suggested';
 import AddFood from './components/AddFood';
