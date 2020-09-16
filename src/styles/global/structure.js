@@ -108,28 +108,28 @@ export const DocContainer = styled.div`
         color: #444444;
         font-weight: 700;
     }
+`;
 
-    .go-back {
-        margin-bottom: 3rem;
-        width: 100%;
-        display: flex;
-        justfiy-content: flex-start;
+export const GoBack = styled.div`
+    margin-bottom: 3rem;
+    width: 100%;
+    display: flex;
+    justfiy-content: flex-start;
 
-        .arrow {
-            width: 10%;
+    .arrow {
+        width: 10%;
 
-            img {
-                width: 100%;
-                height: 4rem;
-                object-fit: contain;
+        img {
+            width: 100%;
+            height: 4rem;
+            object-fit: contain;
 
-                &:hover {
-                    cursor: pointer;
-                }
+            &:hover {
+                cursor: pointer;
             }
         }
     }
-`;
+`
 
 export const DocTitle = styled.h3`
     font-size: 2.6rem;

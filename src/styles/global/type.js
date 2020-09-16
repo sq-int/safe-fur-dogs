@@ -10,6 +10,14 @@ export const HeadTwo = styled.h2`
     color: ${props => props.color ? `${props.color}` : '#000000'};
 `
 
+export const HeadThree = styled.h3`
+    padding: ${props => props.padding ? `${props.padding}` : 'null'};
+    margin: ${props => props.margin ? `${props.margin}` : 'null'};
+    font-size: ${props => props.fontSize ? `${props.fontSize}` : '1rem'};
+    font-weight: ${props => props.fontWeight ? `${props.fontWeight}` : 'normal'};
+    color: ${props => props.color ? `${props.color}` : '#000000'};
+`
+
 export const Paragraph = styled.p`
     padding: ${props => props.padding ? `${props.padding}` : 'null'};
     margin: ${props => props.margin ? `${props.margin}` : 'null'};
