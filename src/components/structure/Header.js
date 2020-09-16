@@ -46,7 +46,7 @@ export default function Header() {
 
             <nav>
                 <Link onClick={() => dispatch({ type: RESET_SEARCH })} to="/">Home</Link>
-                <Link to="/docs">Docs</Link>
+                <Link to="/about">About</Link>
             </nav>
         </HeaderContainer>
     )

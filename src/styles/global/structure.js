@@ -1,6 +1,21 @@
 import { animated } from 'react-spring';
 import styled from 'styled-components';
 
+export const Contain = styled(animated.div)`
+    width: ${props => props.width ? `${props.width}` : '100%'};
+    height: ${props => props.height ? `${props.height}` : 'null'};
+    display: ${props => props.display ? `${props.display}` : 'inline-block'};
+    flex-direction: ${props => props.direction ? `${props.direction}` : 'row'};
+    justify-content: ${props => props.justify ? `${props.justify}` : 'flex-start'};
+    align-items: ${props => props.align ? `${props.align}` : 'flex-start'};
+    border: 5px solid red;
+`
+
+export const Block = styled.div`
+    width: ${props => props.width ? `${props.width}` : '100%'};
+    height: ${props => props.height ? `${props.height}` : 'null'};
+`
+
 export const Container = styled(animated.div)`
     width: 100%;
     display: flex;
