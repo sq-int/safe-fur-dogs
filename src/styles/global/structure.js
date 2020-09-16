@@ -8,7 +8,6 @@ export const Contain = styled(animated.div)`
     flex-direction: ${props => props.direction ? `${props.direction}` : 'row'};
     justify-content: ${props => props.justify ? `${props.justify}` : 'flex-start'};
     align-items: ${props => props.align ? `${props.align}` : 'flex-start'};
-    border: 5px solid red;
 `
 
 export const Block = styled.div`

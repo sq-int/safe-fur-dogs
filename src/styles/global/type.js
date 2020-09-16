@@ -1,6 +1,14 @@
 import styled from 'styled-components';
 import { animated } from 'react-spring';
 
+// building out reusable styles
+export const HeadTwo = styled.h2`
+    font-size: ${props => props.fontSize ? `${props.fontSize}` : '1rem'};
+    font-weight: ${props => props.fontWeight ? `${props.fontWeight}` : 'normal'};
+    color: ${props => props.color ? `${props.color}` : '#000000'};
+`
+
+// old styling below
 export const MainHeading = styled.h1`
     font-size: 6rem;
     font-weight: 900;
