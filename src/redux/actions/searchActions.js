@@ -10,6 +10,10 @@ const FOOD_FOUND = 'FOOD_FOUND';
 const RESET_SEARCH = 'RESET_SEARCH';
 const RATE_LIMIT = 'RATE_LIMIT';
 
+// action solely for testing testing purposes
+const singleTest = () => {
+    return "Hello there!";
+}
 
 const searchItem = (item, redirect) => dispatch => {
     dispatch({ type: SEARCH_START });
@@ -54,5 +58,6 @@ export const searchActionTypes = {
 }
 
 export const searchActionCreators = {
-    searchItem
+    searchItem,
+    singleTest
 }
