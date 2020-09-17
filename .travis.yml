@@ -1,0 +1,10 @@
+language: node_js
+node_js:
+  - lts/*
+cache: npm
+
+install:
+  - yarn ci
+
+script:
+  - yarn test
