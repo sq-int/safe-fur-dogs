@@ -14,7 +14,7 @@ Safe Fur Dogs is an online database providing a way to quickly ensure that food 
 
 ### Front end:
 
-React.js, Redux, styled-components, react-router-dom, react-hook-form, react-spring
+React.js, Redux, styled-components, react-router-dom, react-hook-form, react-spring, redux-persist, typeit-react, axios
 
 # Content Licenses
 
