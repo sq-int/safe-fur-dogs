@@ -16,49 +16,13 @@ import { searchActionCreators } from "../redux/actions/searchActions";
 
 const singleTest = searchActionCreators.singleTest;
 
-const mockSearch = jest.fn((query) => {
-  return Promise.resolve({ query });
-});
-
-// const mockDispatch = jest.fn();
-// jest.mock("react-redux", () => ({
-//   useSelector: jest.fn(),
-//   useDispatch: () => mockDispatch,
-// }));
-
-jest.mock("react-router-dom", () => ({
-  useHistory: () => ({
-    push: jest.fn(),
-  }),
-}));
-
 // ensuring we can access and test our redux action creators
 test("Ensuring action creators can be tested", () => {
   expect(singleTest()).toBe("Hello there!");
 });
 
-// test("it renders the correct components for the SearchView view", () => {
-//   render(
-//     <SearchBox>
-//       <MainSearch>
-//         <input />
-//         <button type="submit" />
-//       </MainSearch>
-//     </SearchBox>
-//   );
-// });
-
-describe("SearchBox component", () => {
+describe("SearchBox component renders", () => {
   beforeEach(() => {
     render(<SearchBox />);
   });
-
-  //   test("Required error should be displayed when search query is invalid", async () => {
-  //     fireEvent.submit(screen.getByTestId("search-query"));
-
-  //     expect(
-  //       await screen.getByText("You must enter in a food name!")
-  //     ).toHaveLength(30);
-  //     expect(mockSearch).not.toBeCalled();
-  //   });
 });
