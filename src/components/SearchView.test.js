@@ -21,8 +21,7 @@ test("Ensuring action creators can be tested", () => {
   expect(singleTest()).toBe("Hello there!");
 });
 
-// SearchBox component renders on SearchView render
-describe("SearchBox component", () => {
+describe("SearchBox component renders", () => {
   beforeEach(() => {
     render(<SearchBox />);
   });
