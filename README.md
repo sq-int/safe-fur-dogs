@@ -25,3 +25,7 @@ All food icons are from [Flaticon](http://flaticon.com) and [IconFinder](http://
 # Testing
 
 Jest and React Testing Library were used to test the frontend.
+
+# Backend
+
+For information on the backend API Safe Fur Dogs uses click [here](https://github.com/sq-int/safe-fur-dogs-be).
