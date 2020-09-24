@@ -21,7 +21,6 @@ import { capitalizeString } from "../utils/strings";
 
 /* components */
 import References from "./References";
-import NotFound from "./alerts/NotFound";
 import AddFood from "./AddFood";
 
 /* assets */
@@ -79,13 +78,6 @@ export default function Food() {
                 )}
               </div>
             </div>
-          )}
-
-          {state.error !== "" && (
-            <AddFoodContainer>
-              <AddFood />
-              <NotFound />
-            </AddFoodContainer>
           )}
         </FoodContainer>
 

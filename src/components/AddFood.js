@@ -7,6 +7,11 @@ import { useHistory, useParams } from "react-router-dom";
 /* actions */
 import { searchActionCreators } from "../redux/actions/searchActions";
 
+// styles
+import { Contain } from "../styles/global/structure";
+import { HeadThree, HeadFour, Paragraph } from "../styles/global/type";
+import { TextInput, Button, FormLabel } from "../styles/global/forms";
+
 export default function AddFood() {
   /* bring in redux dispatch and config */
   const dispatch = useDispatch();
@@ -26,42 +31,56 @@ export default function AddFood() {
     },
   });
 
-  const [submitted, setSubmitted] = useState(false);
-
   const onSubmit = (data) => {
     dispatch(submitMissing(data, (path) => history.push(path)));
-    // setSubmitted(true);
   };
 
   return (
-    <>
-      <h3>Submit Food to our Collection</h3>
+    <Contain width="80%">
+      <HeadThree
+        color="#444444"
+        fontSize="3rem"
+        fontWeight="900"
+        margin="2rem 0 2rem 0"
+      >
+        Submit Food to Our Database
+      </HeadThree>
 
-      <p>
+      <Paragraph fontSize="1.8rem" margin="0 0 2rem 0" lineHeight="2.4rem">
         There is <strong>A LOT</strong> of food and snacks that our pups can get
         into or that they can be given. Because of this, it's virtually
         impossible for us to compile a complete list of <strong>all</strong>{" "}
         food in the world. However, with dedicated research and help from the
         community, we can compile as complete of a list to be used as a resource
         and references as possible.
-      </p>
+      </Paragraph>
 
-      <p>
+      <Paragraph fontSize="1.8rem" margin="0 0 2rem 0" lineHeight="2.4rem">
         That's where you come in! It's as simple as entering in the food or
         snack that you want to add to our collection, and then select whether or
         not it is safe or not for our furry companions to eat.
-      </p>
+      </Paragraph>
 
-      <p>
+      <Paragraph fontSize="1.8rem" margin="0 0 2rem 0" lineHeight="2.4rem">
         Once we receive this information, our team will do our due dilegence to
         research that specific food or snack so we can display accurate
         information to users who may search that particular item. We greatly
         thank you for your help!
-      </p>
+      </Paragraph>
 
       <form onSubmit={handleSubmit(onSubmit)}>
-        <h4>What Food do We Need to Add?</h4>
-        <input
+        <HeadFour
+          color="#444444"
+          fontSize="2.2rem"
+          fontWeight="600"
+          margin="5rem 0 0.5rem 0"
+        >
+          What Food do We Need to Add?
+        </HeadFour>
+        <TextInput
+          width="70%"
+          height="3.5rem"
+          fontSize="1.4rem"
           type="text"
           name="name"
           placeholder="Food Name"
@@ -78,8 +97,15 @@ export default function AddFood() {
           </p>
         )}
 
-        <h4>Is It Safe for Dogs to Consume?</h4>
-        <label className="container">
+        <HeadFour
+          color="#444444"
+          fontSize="2.2rem"
+          fontWeight="600"
+          margin="2rem 0 1rem 0"
+        >
+          Is It Safe for Dogs to Consume?
+        </HeadFour>
+        <FormLabel fontSize="2rem">
           Yes
           <input
             type="radio"
@@ -88,8 +114,8 @@ export default function AddFood() {
             ref={register({ required: true })}
           />
           <span className="checkmark"></span>
-        </label>
-        <label className="container">
+        </FormLabel>
+        <FormLabel fontSize="2rem" margin="0 0 0 1rem">
           No
           <input
             type="radio"
@@ -98,7 +124,7 @@ export default function AddFood() {
             ref={register({ required: true })}
           />
           <span className="checkmark"></span>
-        </label>
+        </FormLabel>
 
         {errors.safe && errors.safe.type === "required" && (
           <p className="error">
@@ -107,9 +133,20 @@ export default function AddFood() {
         )}
 
         <div className="form-controls">
-          <button type="submit">Submit Information</button>
+          <Button
+            color="#ffffff"
+            bgColor="#444444"
+            padding="0.5rem 1rem"
+            margin="2rem 0"
+            fontSize="1.8rem"
+            fontWeight="300"
+            borderRadius="0.5rem"
+            type="submit"
+          >
+            Submit Food
+          </Button>
         </div>
       </form>
-    </>
+    </Contain>
   );
 }

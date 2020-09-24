@@ -45,7 +45,6 @@ function App() {
           <ThankYou />
         </Route>
         <Route path="/not-found/:food">
-          {/* <NotFound /> */}
           <AddFood />
         </Route>
 
