@@ -13,7 +13,7 @@ export default function ThankYou() {
     setTimeout(() => {
       history.push(`/`);
     }, 4000);
-  }, []);
+  }, [history]);
 
   return (
     <Contain

@@ -1,10 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 import { useSpring } from "react-spring";
 import { useHistory } from "react-router-dom";
-
-/* actions */
-import { searchActionTypes } from "../redux/actions";
 
 /* styles */
 import { InnerContainer } from "../styles/global/structure";
@@ -13,7 +10,6 @@ import {
   Summary,
   ResourceList,
   FoodResult,
-  AddFoodContainer,
 } from "../styles/food";
 
 /* utils */
@@ -21,7 +17,6 @@ import { capitalizeString } from "../utils/strings";
 
 /* components */
 import References from "./References";
-import AddFood from "./AddFood";
 
 /* assets */
 import Back from "../assets/Back.svg";
@@ -35,10 +30,6 @@ export default function Food() {
 
   /* bring in state and dispatch*/
   const state = useSelector((state) => state.searchReducer);
-  const dispatch = useDispatch();
-
-  /* action creators */
-  const RESET_SEARCH = searchActionTypes.RESET_SEARCH;
 
   /* application state for formatted food title */
   const [title, setTitle] = useState("");
@@ -51,7 +42,6 @@ export default function Food() {
 
   return (
     <FoodResult style={props}>
-      {console.log(state)}
       <div className="go-back">
         <div className="arrow">
           <img

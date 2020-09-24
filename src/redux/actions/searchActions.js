@@ -21,7 +21,6 @@ const searchItem = (item, redirect) => (dispatch) => {
 
   /* hit the backend and search for the item */
   axios.get(`${process.env.REACT_APP_API}/api/food/${item}`).then((res) => {
-    console.log("RESPONSE: ", res);
     if (res.data !== null) {
       dispatch({ type: FOOD_FOUND, payload: res.data });
       redirect(`${item}`);
