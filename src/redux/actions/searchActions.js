@@ -25,9 +25,15 @@ const searchItem = (item, redirect) => (dispatch) => {
       dispatch({ type: FOOD_FOUND, payload: res.data });
       redirect(`${item}`);
     } else if (res.data === null) {
-      console.log("RESPONSE:", res);
-      // dispatch({ type: SUGGESTIONS_FOUND, payload: res.data });
-      // redirect(`suggestions/${item}`);
+      axios
+        .get(`${process.env.REACT_APP_API}/api/food/suggest/${item}`)
+        .then((res) => {
+          dispatch({ type: SUGGESTIONS_FOUND, payload: res.data });
+          redirect(`suggestions/${item}`);
+        });
+      //   console.log("RESPONSE:", res);
+      //   dispatch({ type: SUGGESTIONS_FOUND, payload: res.data });
+      //   redirect(`suggestions/${item}`);
     }
   });
   // .catch((err) => {
@@ -42,6 +48,16 @@ const searchItem = (item, redirect) => (dispatch) => {
   //   }
   // });
 };
+
+// export const findSuggestions = (item, redirect) => (dispatch) => {
+//     dispatch({ type: SUGGEST_START });
+
+//     axios.get(`${process.env.REACT_APP_API}/api/food/suggest/${item}`)
+//         .then(res => {
+//             dispatch({ type: SUGGESTIONS_FOUND, payload: res.data });
+//             redirect(`suggestions/${item}`);
+//         })
+// }
 
 export const searchActionTypes = {
   SEARCH_START,
