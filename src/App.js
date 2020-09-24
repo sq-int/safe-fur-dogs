@@ -15,6 +15,7 @@ import TermsOfService from "./components/docs/TermsOfService";
 import About from "./components/About";
 import Suggested from "./components/Suggested";
 import AddFood from "./components/AddFood";
+import ThankYou from "./components/alerts/ThankYou";
 
 function App() {
   /* react-spring */
@@ -38,6 +39,13 @@ function App() {
           <TermsOfService />
         </Route>
         <Route exact path="/add-food">
+          <AddFood />
+        </Route>
+        <Route exact path="/thank-you">
+          <ThankYou />
+        </Route>
+        <Route path="/not-found/:food">
+          {/* <NotFound /> */}
           <AddFood />
         </Route>
 

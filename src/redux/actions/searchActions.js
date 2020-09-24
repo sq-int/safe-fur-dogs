@@ -9,6 +9,7 @@ const SUGGESTIONS_FOUND = "SUGGESTIONS_FOUND";
 const FOOD_FOUND = "FOOD_FOUND";
 const RESET_SEARCH = "RESET_SEARCH";
 const RATE_LIMIT = "RATE_LIMIT";
+const SUBMIT_MISSING = "SUBMIT_MISSING";
 
 // action solely for testing testing purposes
 const singleTest = () => {
@@ -28,36 +29,32 @@ const searchItem = (item, redirect) => (dispatch) => {
       axios
         .get(`${process.env.REACT_APP_API}/api/food/suggest/${item}`)
         .then((res) => {
-          dispatch({ type: SUGGESTIONS_FOUND, payload: res.data });
-          redirect(`suggestions/${item}`);
+          if (res.data.length > 0) {
+            dispatch({ type: SUGGESTIONS_FOUND, payload: res.data });
+            redirect(`suggestions/${item}`);
+          } else {
+            dispatch({ type: SEARCH_FAIL });
+            redirect(`not-found/${item}`);
+          }
         });
-      //   console.log("RESPONSE:", res);
-      //   dispatch({ type: SUGGESTIONS_FOUND, payload: res.data });
-      //   redirect(`suggestions/${item}`);
     }
   });
-  // .catch((err) => {
-  //   console.log(`THIS IS OUR ERROR `, err.response);
-
-  //   if (err.response.status === 429) {
-  //     dispatch({ type: RATE_LIMIT });
-  //     redirect(`${item}`);
-  //   } else {
-  //     dispatch({ type: SEARCH_FAIL });
-  //     redirect(`${item}`);
-  //   }
-  // });
 };
 
-// export const findSuggestions = (item, redirect) => (dispatch) => {
-//     dispatch({ type: SUGGEST_START });
+const submitMissing = (item, redirect) => (dispatch) => {
+  // clear search state
+  dispatch({ type: RESET_SEARCH });
 
-//     axios.get(`${process.env.REACT_APP_API}/api/food/suggest/${item}`)
-//         .then(res => {
-//             dispatch({ type: SUGGESTIONS_FOUND, payload: res.data });
-//             redirect(`suggestions/${item}`);
-//         })
-// }
+  /* submit the missing food item to backend */
+  axios
+    .post(`${process.env.REACT_APP_API}/api/food/missing`, item)
+    .then((res) => {
+      redirect(`/thank-you`);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+};
 
 export const searchActionTypes = {
   SEARCH_START,
@@ -69,9 +66,11 @@ export const searchActionTypes = {
   FOOD_FOUND,
   RESET_SEARCH,
   RATE_LIMIT,
+  SUBMIT_MISSING,
 };
 
 export const searchActionCreators = {
-  searchItem,
   singleTest,
+  searchItem,
+  submitMissing,
 };
