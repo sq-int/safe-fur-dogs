@@ -1,92 +1,89 @@
-import React, { useEffect, useState } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { useSpring } from 'react-spring';
-import { useHistory } from 'react-router-dom';
-
-/* actions */
-import { searchActionTypes } from '../redux/actions';
+import React, { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
+import { useSpring } from "react-spring";
+import { useHistory } from "react-router-dom";
 
 /* styles */
-import { InnerContainer } from '../styles/global/structure';
-import { FoodContainer, Summary, ResourceList, FoodResult, AddFoodContainer } from '../styles/food';
+import { InnerContainer } from "../styles/global/structure";
+import {
+  FoodContainer,
+  Summary,
+  ResourceList,
+  FoodResult,
+} from "../styles/food";
 
 /* utils */
-import { capitalizeString } from '../utils/strings';
+import { capitalizeString } from "../utils/strings";
 
 /* components */
-import References from './References';
-import NotFound from './alerts/NotFound';
-import AddFood from './AddFood';
+import References from "./References";
 
 /* assets */
-import Back from '../assets/Back.svg';
+import Back from "../assets/Back.svg";
 
 export default function Food() {
+  /* useHistory configuration */
+  const history = useHistory();
 
-    /* useHistory configuration */
-    const history = useHistory();
+  /* react-spring */
+  const props = useSpring({ opacity: 1, from: { opacity: 0 } });
 
-    /* react-spring */
-    const props = useSpring({ opacity: 1, from: { opacity: 0 } });
+  /* bring in state and dispatch*/
+  const state = useSelector((state) => state.searchReducer);
 
-    /* bring in state and dispatch*/
-    const state = useSelector(state => state.searchReducer);
-    const dispatch = useDispatch();
+  /* application state for formatted food title */
+  const [title, setTitle] = useState("");
 
-    /* action creators */
-    const RESET_SEARCH = searchActionTypes.RESET_SEARCH;
+  useEffect(() => {
+    if (state.food) {
+      setTitle(capitalizeString(state.food.name));
+    }
+  }, [state]);
 
-    /* application state for formatted food title */
-    const [title, setTitle] = useState('');
-
-    useEffect(() => {
-        if (state.food.length) {
-            setTitle(capitalizeString(state.food[0].food));
-        }
-    }, [state]);
-
-    return (
-        <FoodResult style={props}>
-            <div className="go-back">
-                <div className="arrow">
-                    <img onClick={() => {
-                        history.goBack();
-                    }} src={Back} alt="Go Back" />
-                </div>
+  return (
+    <FoodResult style={props}>
+      <div className="go-back">
+        <div className="arrow">
+          <img
+            onClick={() => {
+              history.goBack();
+            }}
+            src={Back}
+            alt="Go Back"
+          />
+        </div>
+      </div>
+      <InnerContainer>
+        <FoodContainer>
+          {state.food !== undefined && (
+            <div className="row">
+              <div className="img-container">
+                <img src={state.food.img} alt="Food" />
+              </div>
+              <div className="food-info">
+                <h2>{title}</h2>
+                {state.food.safe === true && <h4 className="safe">Safe</h4>}
+                {state.food.safe === false && (
+                  <h4 className="unsafe">Not Safe</h4>
+                )}
+              </div>
             </div>
-            <InnerContainer>
-                <FoodContainer>
-                    {state.food !== undefined && state.food.length > 0 &&
-                        <div className="row">
-                            <div className="img-container">
-                                <img src={state.food[0].img} alt='Food' />
-                            </div>
-                            <div className="food-info">
-                                <h2>{title}</h2>
-                                {state.food[0].safe === true && <h4 className="safe">Safe</h4>}
-                                {state.food[0].safe === false && <h4 className="unsafe">Not Safe</h4>}
-                            </div>
-                        </div>}
+          )}
+        </FoodContainer>
 
-                    {state.error.length !== 0 &&
-                        <AddFoodContainer>
-                            <AddFood />
-                            <NotFound />
-                        </AddFoodContainer>
-                    }
-                </FoodContainer>
+        {state.food !== undefined && (
+          <Summary>
+            <p>{state.food.summary}</p>
+          </Summary>
+        )}
+      </InnerContainer>
 
-                {state.food !== undefined && state.food.length > 0 &&
-                    <Summary>
-                        <p>{state.food[0].summary}</p>
-                    </Summary>}
-            </InnerContainer>
-
-            {state.food !== undefined && state.food.length > 0 &&
-                <ResourceList>
-                    <h3>Helpful Resources</h3>
-                    <References resources={state.food[0].resources} />
-                </ResourceList>}
-        </FoodResult>
-    )
+      {state.food !== undefined && (
+        <ResourceList>
+          <h3>Helpful Resources</h3>
+          <References resources={state.food.resources} />
+        </ResourceList>
+      )}
+    </FoodResult>
+  );
 }
