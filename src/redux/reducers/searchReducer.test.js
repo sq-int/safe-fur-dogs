@@ -1,4 +1,3 @@
-import React from "react";
 import { searchReducer } from "./searchReducer";
 import { searchActionTypes } from "../actions/searchActions";
 import {
