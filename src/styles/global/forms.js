@@ -57,6 +57,8 @@ export const MainSearch = styled.form`
   }
 `;
 
+MainSearch.displayName = "MainSearch";
+
 export const TextInput = styled.input.attrs((props) => ({
   type: "text",
 }))`
