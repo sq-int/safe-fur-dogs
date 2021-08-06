@@ -19,24 +19,27 @@ const singleTest = () => {
 const searchItem = (item, redirect) => (dispatch) => {
   dispatch({ type: SEARCH_START });
 
+  console.log("Searching for: " + item)
+
   /* hit the backend and search for the item */
-  axios.get(`${process.env.REACT_APP_API}/api/food/${item}`).then((res) => {
-    if (res.data !== null) {
-      dispatch({ type: FOOD_FOUND, payload: res.data });
-      redirect(`${item}`);
-    } else if (res.data === null) {
-      axios
-        .get(`${process.env.REACT_APP_API}/api/food/suggest/${item}`)
-        .then((res) => {
-          if (res.data.length > 0) {
-            dispatch({ type: SUGGESTIONS_FOUND, payload: res.data });
-            redirect(`suggestions/${item}`);
-          } else {
-            dispatch({ type: SEARCH_FAIL });
-            redirect(`not-found/${item}`);
-          }
-        });
-    }
+  axios.get(`${process.env.REACT_APP_API}/food/${item}`)
+    .then((res) => {
+      if (res.data !== null) {
+        dispatch({ type: FOOD_FOUND, payload: res.data });
+        redirect(`${item}`);
+      // } else if (res.data === null) {
+      //   axios
+      //     .get(`${process.env.REACT_APP_API}/food/suggest/${item}`)
+      //     .then((res) => {
+      //       if (res.data.length > 0) {
+      //         dispatch({ type: SUGGESTIONS_FOUND, payload: res.data });
+      //         redirect(`suggestions/${item}`);
+      //       } else {
+      //         dispatch({ type: SEARCH_FAIL });
+      //         redirect(`not-found/${item}`);
+      //       }
+      //     });
+      }
   });
 };
 
