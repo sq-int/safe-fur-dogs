@@ -6,7 +6,7 @@
 
 ### Description
 
-Safe Fur Dogs is an online database providing a way to quickly ensure that food you feed your dog or products you allow your dog to use are safe.
+Safe Fur Dogs provides a quick way to determine if a food you want to feed your dog is safe.
 
 ## Analytics
 
@@ -25,7 +25,3 @@ All food icons are from [Flaticon](http://flaticon.com) and [IconFinder](http://
 # Testing
 
 Jest and React Testing Library were used to test the frontend.
-
-# Backend
-
-For information on the backend API Safe Fur Dogs uses click [here](https://github.com/sq-int/safe-fur-dogs-be).
