@@ -16,22 +16,23 @@ export default function About() {
                     About Safe Fur Dogs
                 </HeadTwo>
 
-                <Paragraph fontSize="1.6rem" lineHeight="2rem" margin="0 0 2rem 0">As a dog owner, "Can she eat this?" was a reoccurring question I found myself asking
-                whenever I had some snack or treat in hand. My furry pal definitely believes that she is
-                entitled to anything I am eating. Luckily for her, I'm a pushover and a sucker for
-                    the puppy dog eyes.</Paragraph>
+                <Paragraph fontSize="1.6rem" lineHeight="2rem" margin="0 0 2rem 0">
+                    Safe Fur Dogs was built with the intent to make it easier to quickly determine if a particular food is safe for 
+                    a dog to eat. Through inspiration drawn through the puppy dog eyes of my furry companion Eevee anytime I was snacking, 
+                    I wanted to make an easy to use application that would give dog owners the general consensus of whether or not a food 
+                    was safe for consumption without having to sift through long winded articles.
+                </Paragraph>
 
-                <Paragraph fontSize="1.6rem" lineHeight="2rem" margin="0 0 2rem 0">Because of this, I always found myself frantically Googling if <em>x</em> or <em>y</em> food was safe for my dog to consume. Although
-                there are some awesome resources out there that give great detail on the safety of particular foods, it seemed
-                like there wasn't one single application that allowed the user to search for a certain type of food to quickly
-                    find out if it is safe or not.</Paragraph>
+                <Paragraph fontSize="1.6rem" lineHeight="2rem" margin="0 0 2rem 0">
+                    Safe Fur Dogs is not meant to be a replacement for recommendations from a veterinarian as all dogs are different and 
+                    could have differing reactions to different foods. It is always recommended that you consult a veterinarian before feeding 
+                    your dog something you are unsure about.
+                </Paragraph>
 
-                <Paragraph fontSize="1.6rem" lineHeight="2rem" margin="0 0 2rem 0">This became my motivation behind creating Safe Fur Dogs, a gateway to discovering the safety of food, treats, and snacks, so that you
-                can definitely still sift through long articles, but you can also quickly get that general consensus answer of whether or not it is safe
-                    for dogs to eat the what you searched for.</Paragraph>
-
-                <Paragraph fontSize="1.6rem" lineHeight="2rem" margin="0 0 2rem 0">As a growing developer, it has become a passion side project that I would like to
-                continue to build to help other dog owners quickly find the answer they need, just as I needed it.</Paragraph>
+                <Paragraph fontSize="1.6rem" lineHeight="2rem" margin="0 0 2rem 0">
+                    On all searches through Safe Fur Dogs, we provide links to high quality resources where you can read more detailed 
+                    facts on the food you are searching and its known interactions with dogs if you choose.
+                </Paragraph>
             </Block>
 
             <Block display="flex" direction="column" margin="5rem 0 0">
