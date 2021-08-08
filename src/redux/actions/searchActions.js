@@ -19,10 +19,8 @@ const singleTest = () => {
 const searchItem = (item, redirect) => (dispatch) => {
   dispatch({ type: SEARCH_START });
 
-  console.log("Searching for: " + item)
-
   /* hit the backend and search for the item */
-  axios.get(`${process.env.REACT_APP_API}/food/${item}`)
+  axios.get(`${process.env.REACT_APP_API}/api/food/${item}`)
     .then((res) => {
       if (res.data !== null) {
         dispatch({ type: FOOD_FOUND, payload: res.data });
