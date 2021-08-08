@@ -34,20 +34,6 @@ export default function About() {
                     facts on the food you are searching and its known interactions with dogs if you choose.
                 </Paragraph>
             </Block>
-
-            <Block display="flex" direction="column" margin="5rem 0 0">
-                <HeadTwo fontSize="4rem" fontWeight="800" color="#444444">
-                    Documentation
-                </HeadTwo>
-
-                <DocContainer>
-                    <DocTitle color="#24767A" margin="2rem 0 0 0">Terms of Service</DocTitle>
-                    <p><Link to="/terms-of-service">Terms of Service</Link></p>
-
-                    <DocTitle color="#24767A">Privacy Policy</DocTitle>
-                    <p><Link to="/privacy-policy">Privacy Policy</Link></p>
-                </DocContainer>
-            </Block>
         </Contain>
     )
 }
