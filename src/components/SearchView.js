@@ -36,10 +36,10 @@ function SearchView() {
   };
 
   /* react-spring configuration */
-  // const contentProps = useSpring({
-  //   opacity: state.loading ? 1 : 0,
-  //   marginLeft: state.loading ? 0 : -500,
-  // });
+  const contentProps = useSpring({
+    opacity: state.loading ? 1 : 0,
+    marginLeft: state.loading ? 0 : -500,
+  });
 
   return (
     <SearchBox>
@@ -89,11 +89,11 @@ function SearchView() {
         <div className="error">Please enter in a valid food name.</div>
       )}
 
-      {/* {state.loading === true && (
+      {state.loading === true && (
         <SearchLoadingMessage style={contentProps}>
           Searching...
         </SearchLoadingMessage>
-      )} */}
+      )}
     </SearchBox>
   );
 }

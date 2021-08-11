@@ -1,12 +1,9 @@
 // react
 import React from 'react';
-// Link for routing - react-router-dom
-import { Link } from 'react-router-dom';
 
 // styles
 import { Contain, Block } from '../styles/global/structure';
 import { HeadTwo, Paragraph } from '../styles/global/type';
-import { DocContainer, DocTitle } from '../styles/global/structure';
 
 export default function About() {
     return (
