@@ -38,6 +38,10 @@ const searchItem = (item, redirect) => (dispatch) => {
       //       }
       //     });
       }
+      else {
+        dispatch({ type: SEARCH_FAIL });
+        redirect(`not-found/${item}`)
+      }
   });
 };
 
